@@ -1,5 +1,10 @@
 import React from 'react';
 import style from './index.module.css';
+import global from '~/client/script/obj/global';
+
+const {
+  emitter,
+} = global;
 
 class Tab extends React.Component {
   constructor(props) {
@@ -14,6 +19,20 @@ class Tab extends React.Component {
     this.setState({
       active,
     });
+    switch (active) {
+      case 1:
+        emitter.send('page/');
+        break;
+      case 2:
+        emitter.send('page/reference');
+        break;
+      case 3:
+        emitter.send('page/commandLine');
+        break;
+      case 4:
+        emitter.send('page/codeStyle');
+        break;
+    }
   }
 
   render() {

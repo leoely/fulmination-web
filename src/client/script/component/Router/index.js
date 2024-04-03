@@ -4,6 +4,7 @@ import UpdateConfirm from '~/client/script/component/UpdateConfirm';
 import Container from '~/client/script/component/Container'
 import NotFound from '~/client/script/page/NotFound';
 import WebApp from '~/client/script/component/WebApp';
+import Tab from '~/client/script/component/Tab';
 import { readCookie, } from 'manner.js/client';
 import global from '~/client/script/obj/global';
 
@@ -36,9 +37,24 @@ class Router extends WebApp {
       });
     });
     emitter.on('page/', async () => {
-      const Home = await import('~/client/script/page/CodeStyle');
+      const Home = await import('~/client/script/page/Home');
       this.addRoute('/', Home.default);
       location.to('/');
+    });
+    emitter.on('page/codeStyle', async () => {
+      const CodeStyle = await import('~/client/script/page/CodeStyle');
+      this.addRoute('/codeStyle', CodeStyle.default);
+      location.to('/codeStyle');
+    });
+    emitter.on('page/commandLine', async () => {
+      const CommandLine = await import('~/client/script/page/CommandLine');
+      this.addRoute('/commandLine', CommandLine.default);
+      location.to('/commandLine');
+    });
+    emitter.on('page/reference', async () => {
+      const Reference = await import('~/client/script/page/CommandLine');
+      this.addRoute('/reference', Reference.default);
+      location.to('/reference');
     });
   }
 
@@ -76,6 +92,7 @@ class Router extends WebApp {
       <Container>
         { update && <UpdateConfirm /> }
         <div id="page" className={style.page}>{this.getPage(location)}</div>
+        <Tab />
       </Container>;
     }
     return router;

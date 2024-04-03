@@ -1,5 +1,4 @@
 import React from 'react';
-import Tab from '~/client/script/component/Tab';
 import Text from '~/client/script/component/Text';
 import Format from '~/client/script/component/Format';
 import Formats from '~/client/script/component/Formats';
@@ -9,7 +8,6 @@ class Home extends React.Component {
   render() {
     return(
       <div className={style.quickstart}>
-        <Tab />
         <Text>
           Fulmination is a pure text color project.Parse input file format as
           "ctf" output pure text with color."ctf" mean color text format.ctf
