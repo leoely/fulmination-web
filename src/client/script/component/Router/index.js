@@ -56,6 +56,11 @@ class Router extends WebApp {
       this.addRoute('/reference', Reference.default);
       location.to('/reference');
     });
+    emitter.on('page/api', async () => {
+      const Api = await import('~/client/script/page/Api');
+      this.addRoute('/api', Api.default);
+      location.to('/api');
+    });
   }
 
   addRoute(path, component) {

@@ -32,6 +32,9 @@ class Tab extends React.Component {
       case 4:
         emitter.send('page/codeStyle');
         break;
+      case 5:
+        emitter.send('page/api');
+        break;
     }
   }
 
@@ -43,6 +46,7 @@ class Tab extends React.Component {
         <li key={2} className={[style.item, active === 2 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(2)} >Reference</li>
         <li key={3} className={[style.item, active === 3 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(3)} >Command Line</li>
         <li key={4} className={[style.item, active === 4 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(4)} >Code Style</li>
+        <li key={5} className={[style.item, active === 5 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(5)} >API</li>
       </ul>
     );
   }

@@ -3387,10 +3387,10 @@ glogg@^2.2.0:
   dependencies:
     sparkles "^2.1.0"
 
-glow.js@^0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/glow.js/-/glow.js-0.0.11.tgz#d8e10315810f8edc574ff78e5f5869890d5408cf"
-  integrity sha512-nuILLvJewSkJkwBHUmQuPAWUVNlefoq901Ohzkw9eflFerUS6/c9EhjkewLEleRwwx33yTSTpyDxli9DCXNlHQ==
+glow.js@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/glow.js/-/glow.js-0.0.13.tgz#7e8654352e9c3844285e6a814c88ff336e0f42bb"
+  integrity sha512-yeUZ9kgPYk+6ElzM8usws/wnzAA7gEj1GbX1FELC1JxvB+qDkZGdGbfuoownb/nxC3PGQtXUwOZGBRAebFRxoA==
 
 glow.js@^0.0.3:
   version "0.0.3"

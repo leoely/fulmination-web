@@ -1,0 +1,20 @@
+.module
+  color: rgb(164, 19, 33)
+.identifer
+  color: rgb(122, 122, 122)
+.quotation
+  color: rgb(242, 201, 24)
+.string
+  color: rgb(242, 121, 12)
+.function
+  color: rgb(200, 24, 24)
+.declare
+  color: rgb(142, 10, 152)
+.arithmetic
+  color: rgb(244, 23, 42)
+.class
+  color: rgb(245, 60, 93)
+.parenthese
+  color: rgb(42, 162, 42)
+.call
+  color: rgb(242, 42, 145)
