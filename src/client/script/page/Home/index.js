@@ -8,7 +8,7 @@ import style from './index.module.css';
 class Home extends React.Component {
   render() {
     return(
-      <div className={style.main}>
+      <div className={style.quickstart}>
         <Tab />
         <Text>
           Fulmination is a pure text color project.Parse input file format as
@@ -42,7 +42,7 @@ class Home extends React.Component {
           </Format>
         </Formats>
         <Text>
-          And ctf also has chalk syntax.
+          And ctf also has chalk syntax section.
         </Text>
         <Formats>
           <Format>

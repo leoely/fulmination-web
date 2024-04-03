@@ -1,9 +1,8 @@
 import React from 'react';
 import style from './index.module.css';
 
-export default function locationTemplate(e) {
+export default function ctfTemplate(e) {
   const { type, elem, } = e;
-  console.log(e);
   switch (type) {
     case ' ':
       return <span> </span>;
