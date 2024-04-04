@@ -12,7 +12,7 @@
     "file-loader": "^6.2.0",
     "gulp-babel": "^8.0.0",
     "html-webpack-plugin": "^5.6.0",
-    "mannerjs-cli": "^0.0.34",
+    "mannerjs-cli": "^0.0.36",
     "postcss-loader": "^8.1.1",
     "style-loader": "^3.3.4",
     "sugarss": "^4.0.1",
@@ -30,7 +30,7 @@
   "dependencies": {
     "glow.js": "^0.0.14",
     "gulp": "^5.0.0",
-    "manner.js": "^0.0.19",
+    "manner.js": "^0.0.30",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
