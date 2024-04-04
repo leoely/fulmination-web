@@ -4334,10 +4334,10 @@ make-iterator@^1.0.0:
   dependencies:
     kind-of "^6.0.2"
 
-manner.js@^0.0.30:
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/manner.js/-/manner.js-0.0.30.tgz#60dbcb013bc30183ae01fe2b5c3fd4d0b21445d4"
-  integrity sha512-04B+nEahwTPmeVrcBwaCkGo+3NbtM/pzFfcVd54jmDZKky/9oz52i7Fqa3QFpJvFWfTXWO4SlnK15WPNhDyC6g==
+manner.js@^0.0.31:
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/manner.js/-/manner.js-0.0.31.tgz#57306688eb12bbcc48717d33e1a409e92e9e678b"
+  integrity sha512-4ygpaXkf1X9nzGIEq8kPYiAdcSm9V5ASHaKqYfn9CbZVxJpx7QGV5e7MuTOY/nBDYOLs4WFLydmZzcDe+bIXkA==
   dependencies:
     babel-plugin-root-import "^6.6.0"
     glow.js "^0.0.3"
