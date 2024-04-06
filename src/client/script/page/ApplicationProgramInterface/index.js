@@ -16,6 +16,10 @@ class ApplicationProgramInterface extends React.Component {
           <Format format="javascript">const ctfParser = new CtfParser();</Format>
           <Format format="javascript">ctfParser.scan(text);</Format>
         </Formats>
+        <Text>
+          In this way user can parse their own ctf text.Output text be colored to
+          terminal.
+        </Text>
       </div>
     );
   }
