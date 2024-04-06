@@ -2,7 +2,6 @@ import React from 'react';
 import style from './index.module.css';
 
 export default function javascriptTemplate(e) {
-  console.log(e);
   const { type, elem, } = e;
   switch (type) {
     case ' ':

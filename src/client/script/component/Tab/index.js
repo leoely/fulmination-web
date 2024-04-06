@@ -6,11 +6,27 @@ const {
   emitter,
 } = global;
 
+function getInitActive() {
+  switch (location.pathname) {
+    case '/':
+      return 1;
+    case '/reference':
+      return 2;
+    case '/commandLine':
+      return 3;
+    case '/codeStyle':
+      return 4;
+    case '/applicationProgramInterface':
+      return 5;
+  }
+}
+
+
 class Tab extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: 1,
+      active: getInitActive(),
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -33,7 +49,7 @@ class Tab extends React.Component {
         emitter.send('page/codeStyle');
         break;
       case 5:
-        emitter.send('page/api');
+        emitter.send('page/applicationProgramInterface');
         break;
     }
   }

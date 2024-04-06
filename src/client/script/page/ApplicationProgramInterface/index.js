@@ -4,10 +4,10 @@ import Text from '~/client/script/component/Text';
 import Formats from '~/client/script/component/Formats';
 import Format from '~/client/script/component/Format';
 
-class Api extends React.Component {
+class ApplicationProgramInterface extends React.Component {
   render() {
     return (
-      <div className={style.api}>
+      <div className={style.applicationProgramInterface}>
         <Text>
         Fulmination provider api "CtfParser".User can this api parse ctf text.
         </Text>
@@ -21,4 +21,4 @@ class Api extends React.Component {
   }
 }
 
-export default Api;
+export default ApplicationProgramInterface;
