@@ -3402,10 +3402,10 @@ glogg@^2.2.0:
   dependencies:
     sparkles "^2.1.0"
 
-glow.js@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/glow.js/-/glow.js-0.0.14.tgz#984e0ae892d10b55db1242966f3be879ff9f61ff"
-  integrity sha512-poxFdrZ+upv3uKSmz22RmTyj5IhMYjDbfVk6kDtZOygkjj1RXFR8nA0V1Chegosr12xNZh0jeKpg5K9eTXjEUg==
+glow.js@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/glow.js/-/glow.js-0.0.15.tgz#f9c6a228747bc4087a404a752c2368e94c9d0c5e"
+  integrity sha512-CFaxPq7CpxavxAPcE6tjcFfJZSzTsTYe0zPPQ32544VGIXp08nRDZIVKF2zdmBpBxK2Qqoi4lJHfDyo1WstxvQ==
 
 glow.js@^0.0.3:
   version "0.0.3"
@@ -4334,10 +4334,10 @@ make-iterator@^1.0.0:
   dependencies:
     kind-of "^6.0.2"
 
-manner.js@^0.0.31:
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/manner.js/-/manner.js-0.0.31.tgz#57306688eb12bbcc48717d33e1a409e92e9e678b"
-  integrity sha512-4ygpaXkf1X9nzGIEq8kPYiAdcSm9V5ASHaKqYfn9CbZVxJpx7QGV5e7MuTOY/nBDYOLs4WFLydmZzcDe+bIXkA==
+manner.js@^0.0.33:
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/manner.js/-/manner.js-0.0.33.tgz#2b1359c2293c022167f6cc3cd00bca4f1a29898d"
+  integrity sha512-w4Plg8arZID/QKcM70eVgTUmRBO9s5KlPbBIOyhnCJabGCpuT+9jBpvw9VJfSDw47j/HduTTrr5LohS+LOpGag==
   dependencies:
     babel-plugin-root-import "^6.6.0"
     glow.js "^0.0.3"

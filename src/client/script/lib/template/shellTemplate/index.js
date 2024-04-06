@@ -7,9 +7,9 @@ export default function shellTemplate(e) {
   switch (type) {
     case ' ':
       return <span> </span>;
+    case 'filename':
+      return <span className={style.filename}>{elem}</span>;
     case 'command':
       return <span className={style.command}>{elem}</span>;
-    case 'dot':
-      return <span className={style.dot}>{elem}</span>;
   }
 }
