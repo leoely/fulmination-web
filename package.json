@@ -1,4 +1,11 @@
 {
+  "name": "fulmination-web",
+  "version": "0.0.1",
+  "description": "fulmination document webiste.",
+  "main": "index.js",
+  "repository": "git@github.com:leoely/fulmination-web.git",
+  "author": "Leo Ely",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.24.1",
     "@babel/core": "^7.24.3",
