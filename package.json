@@ -6,6 +6,13 @@
   "repository": "git@github.com:leoely/fulmination-web.git",
   "author": "Leo Ely",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./src",
+    "build": "gulp build",
+    "start": "yarn run build && node dist/index.js",
+    "dev": "webpack serve --config webpack.config.dev.babel.js",
+    "pro": "webpack --config webpack.config.pro.babel.js"
+  },
   "devDependencies": {
     "@babel/cli": "^7.24.1",
     "@babel/core": "^7.24.3",
@@ -19,7 +26,7 @@
     "file-loader": "^6.2.0",
     "gulp-babel": "^8.0.0",
     "html-webpack-plugin": "^5.6.0",
-    "mannerjs-cli": "^0.0.36",
+    "mannerjs-cli": "^0.0.43",
     "postcss-loader": "^8.1.1",
     "style-loader": "^3.3.4",
     "sugarss": "^4.0.1",
@@ -27,17 +34,10 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
-  "scripts": {
-    "lint": "eslint ./src",
-    "build": "gulp build",
-    "start": "yarn run build && node dist/index.js",
-    "dev": "webpack serve --config webpack.config.dev.babel.js",
-    "pro": "webpack --config webpack.config.pro.babel.js"
-  },
   "dependencies": {
-    "glow.js": "^0.0.15",
+    "glow.js": "^0.0.23",
     "gulp": "^5.0.0",
-    "manner.js": "^0.0.33",
+    "manner.js": "^0.0.37",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
