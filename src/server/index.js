@@ -10,7 +10,7 @@ https.createServer({
     title: 'Fulmination',
     content: 'Fulmination document website.',
     fonts: ['ttf'],
-    develope: false,
+    develope: true,
   });
   await commonHttp.process(req, res);
 }).listen(8000);
