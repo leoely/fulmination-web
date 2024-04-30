@@ -7,7 +7,7 @@ module.exports = {
     main: './src/client/index.js',
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[fullhash].bundle.js',
     path: path.resolve(__dirname, 'static'),
   },
   module: {
