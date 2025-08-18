@@ -35,21 +35,27 @@ class Tab extends React.Component {
     this.setState({
       active,
     });
+    const {
+      pathname,
+      search,
+      hash,
+    } = window.location;
+    const path = pathname + search + hash;
     switch (active) {
       case 1:
-        emitter.send('page/');
+        emitter.send('page/', { path: '/', });
         break;
       case 2:
-        emitter.send('page/reference');
+        emitter.send('page/reference', { path: '/reference', });
         break;
       case 3:
-        emitter.send('page/commandLine');
+        emitter.send('page/commandLine', { path: '/commandLine', });
         break;
       case 4:
-        emitter.send('page/codeStyle');
+        emitter.send('page/codeStyle', { path: '/codeStyle', });
         break;
       case 5:
-        emitter.send('page/applicationProgramInterface');
+        emitter.send('page/applicationProgramInterface', { path: '/applicationProgramInterface', });
         break;
     }
   }

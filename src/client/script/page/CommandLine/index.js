@@ -1,10 +1,11 @@
 import React from 'react';
-import style from './index.module.css';
+import Page from '~/client/script/component/Page';
 import Text from '~/client/script/component/Text';
 import Format from '~/client/script/component/Format';
 import Formats from '~/client/script/component/Formats';
+import style from './index.module.css';
 
-class CommandLine extends React.Component {
+class CommandLine extends Page {
   render() {
     return (
       <div className={style.commandline}>

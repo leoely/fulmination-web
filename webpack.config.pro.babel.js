@@ -8,16 +8,42 @@ export default {
   },
   output: {
     filename: '[name].bundle.js',
+    chunkFilename: '[id].chunk.js',
     path: path.resolve(__dirname, 'static'),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      minify: true,
+      favicon: './asset/favicon.png',
+      template: './src/client/html/index.html',
+    }),
+  ],
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         }
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+          {
+            loader: 'babel-loader',
+          },
+        ],
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/i,
@@ -36,11 +62,17 @@ export default {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-          }
-        ]
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        }
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
       },
     ],
   },

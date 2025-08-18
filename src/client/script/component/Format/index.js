@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './index.module.css';
-import formatCtf from '~/client/script/lib/formatCtf';
-import formatShell from '~/client/script/lib/formatShell';
-import formatJavascript from '~/client/script/lib/formatJavascript';
+import formatFulmination from '~/client/script/lib/util/formatFulmination';
+import formatJavascript from '~/client/script/lib/util/formatJavascript';
+import formatShell from '~/client/script/lib/util/formatShell';
 
 class Format extends React.Component {
   render() {
@@ -13,12 +13,15 @@ class Format extends React.Component {
         {formatShell(this.props.children)}
       </div>
     } else if (format === 'javascript') {
-      content = <div className={style.format}>
-        {formatJavascript(this.props.children)}
+      const html = formatJavascript(this.props.children);
+      content = <div
+        className={style.format}
+        dangerouslySetInnerHTML={{__html: html}}
+      >
       </div>
     } else {
       content = <div className={style.format}>
-        {formatCtf(this.props.children)}
+        {formatFulmination(this.props.children)}
       </div>
     }
     return content;

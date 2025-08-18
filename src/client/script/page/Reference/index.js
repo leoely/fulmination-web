@@ -1,10 +1,11 @@
 import React from 'react';
-import style from './index.module.css';
+import Page from '~/client/script/component/Page';
 import Text from '~/client/script/component/Text';
 import Formats from '~/client/script/component/Formats';
 import Format from '~/client/script/component/Format';
+import style from './index.module.css';
 
-class Reference extends React.Component {
+class Reference extends Page {
   render() {
     return (
       <div className={style.reference}>
