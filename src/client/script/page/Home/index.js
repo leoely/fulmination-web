@@ -1,13 +1,40 @@
 import React from 'react';
 import Page from '~/client/script/component/Page';
+import Text from '~/client/script/component/Text';
+import MultiLineJavascript from '~/client/script/component/MultiLineJavascript';
 import H1 from '~/client/script/component/H1';
 import H2 from '~/client/script/component/H2';
 import Ul from '~/client/script/component/Ul';
 import Li from '~/client/script/component/Li';
 import style from './index.module.css';
+import '~/client/style/hljs.css';
 
 class Home extends Page {
+  constructor() {
+    super();
+    this.javascriptCode1 = "fulmination.scan('(+) bold: hello fulmination text.')";
+    this.javascriptCode2 = [
+      "fulmination.scan(`",
+      "  [+] bold:",
+      "  | hello fulmination passage.",
+      "  | hello fulmination passage.",
+      "  | hello fulmination passage.",
+      "`);",
+    ].join('\n');
+    this.javascriptCode3 = [
+      "fulmination.scanAll([",
+      "  [`",
+      "    [+] bold:",
+      "    |",
+      "  `, 1],",
+      "  ['(+) dim: This is the fulmination transfer text.', 2],",
+      "  ['(+) dim: This is the original text fulmination.', 0],",
+      "]);",
+    ].join('\n');
+  }
+
   render() {
+    const { javascriptCode1, javascriptCode2, javascriptCode3, } = this;
     return (
       <div className={style.home}>
         <div className={style.header}>
@@ -57,6 +84,14 @@ class Home extends Page {
             so that novices can quickly get started with th fulmination project.
           </Li>
         </Ul>
+        <H2>*Example:</H2>
+        <Text>Fulmination output code example 1:</Text>
+        <MultiLineJavascript javascriptCode={javascriptCode1} />
+        <Text>Fulmination output code example 2:</Text>
+        <MultiLineJavascript javascriptCode={javascriptCode2} />
+        <Text>Fulmination output code example 3:</Text>
+        <MultiLineJavascript javascriptCode={javascriptCode3} />
+        <H2>*Result:</H2>
       </div>
     );
   }
