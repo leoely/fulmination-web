@@ -1,68 +1,62 @@
 import React from 'react';
 import Page from '~/client/script/component/Page';
-import Text from '~/client/script/component/Text';
-import Format from '~/client/script/component/Format';
-import Formats from '~/client/script/component/Formats';
+import H1 from '~/client/script/component/H1';
+import H2 from '~/client/script/component/H2';
+import Ul from '~/client/script/component/Ul';
+import Li from '~/client/script/component/Li';
 import style from './index.module.css';
 
 class Home extends Page {
   render() {
-    return(
-      <div className={style.quickstart}>
-        <Text>
-          Fulmination is a pure text color project.Parse input file format as
-          "ctf" output pure text with color."ctf" mean color text format.ctf
-          file format has own syntax,user can color text by their own special
-          need.ctf syntax is semantic and beatiful syntax.User will enjoy when
-          they write ctf file.ctf use by chalk project to color pure text.User
-          can also watch and learn chalk.That's will be helpful for you use ctf
-          file.
-        </Text>
-        <Text>
-          Text below is use ctf syntax.ctf format text with "format" and "text"
-          and so on concept.
-        </Text>
-        <Formats>
-          <Format>
-            (+) bold; red: This is ctf text syntax (+) dim; underline: ctf text will be in same line.
-          </Format>
-          <Format> </Format>
-          <Format>
-            [+] bold; green:
-          </Format>
-          <Format>
-              | This is ctf passage syntax.
-          </Format>
-          <Format>
-              | Each passage will in different line.
-          </Format>
-          <Format>
-              | Each passage is start with delimiter.
-          </Format>
-        </Formats>
-        <Text>
-          And ctf also has chalk syntax section.
-        </Text>
-        <Formats>
-          <Format>
-            (+) bold: bold, underline and so on is chalk style. (+) underline:
-            You can get this section document in chalk. &
-          </Format>
-          <Format>
-            (+) bold: text and passage use same chalk style.
-          </Format>
-          <Format> </Format>
-          <Format>
-            [+] bold:
-          </Format>
-          <Format>
-            | style use ";" as delimiter, passage use "|" as delimiter.
-          </Format>
-          <Format>
-            | Passage apply style to all passage.Text apply style only to one
-            text.
-          </Format>
-        </Formats>
+    return (
+      <div className={style.home}>
+        <div className={style.header}>
+          <H1>Fulmination</H1>
+          <span className={style.introduce}>
+            is a library and peripherals based on dynamic compilation to
+            implement the color and format of command line plain text.
+          </span>
+        </div>
+        <H2>*Advantage:</H2>
+        <Ul>
+          <Li>
+            Based on dynmaic compilation,the code is more compact and the
+            developement efficiency is high.
+          </Li>
+          <Li>
+            The newly designed syntax makes the code more elegant.It is easier
+            to write and read in the early stages of development,and easier to
+            maintain later.
+          </Li>
+          <Li>
+            Using efficient algorithm optimization,although an extra layer is
+            introduced,the code execution speed is still very fast.
+          </Li>
+          <Li>
+            It exposes a variety of rich development interfaces that can be
+            applied in various scenarious.
+          </Li>
+          <Li>
+            Providers debugging and testing interface, and the code using
+            fulmination is given better robusteness.
+          </Li>
+          <Li>
+            Using text as carrier and using various transmission methods such as
+            the internet has become possible.
+          </Li>
+          <Li>
+            Provides various cross-platform command line tools, so that the use
+            of fulmination is not limited to the node.js environment.
+          </Li>
+          <Li>
+            The author heavily uses the fulmination project,contine to develop
+            and maintain it.
+          </Li>
+          <Li>
+            Provide a dedicated documentation website for easy use at all times,
+            so that novices can quickly get started with th fulmination project.
+          </Li>
+        </Ul>
       </div>
     );
   }

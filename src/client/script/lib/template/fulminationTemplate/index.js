@@ -7,11 +7,12 @@ export default function fulminationTemplate(e) {
     case 'format':
     case 'asterisk':
     case 'semicolon':
-    case 'escape':
     case 'and':
       break;
     case ' ':
       return <span> </span>;
+    case 'escape':
+      return <span className={style.escape}>{elem}</span>;
     case 'line':
       return <span className={style.line}>{elem}</span>;
     case 'colon':

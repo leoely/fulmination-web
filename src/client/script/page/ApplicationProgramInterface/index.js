@@ -4,6 +4,7 @@ import Text from '~/client/script/component/Text';
 import Formats from '~/client/script/component/Formats';
 import Format from '~/client/script/component/Format';
 import style from './index.module.css';
+import '~/client/style/hljs.css';
 
 class ApplicationProgramInterface extends Page {
   render() {

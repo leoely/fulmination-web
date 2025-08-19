@@ -4,7 +4,6 @@ import {
 } from 'browser-advising';
 import Loading from '~/client/script/page/Loading';
 import UpdateConfirm from '~/client/script/component/UpdateConfirm';
-import Container from '~/client/script/component/Container'
 import WebApp from '~/client/script/component/WebApp';
 import Tab from '~/client/script/component/Tab';
 import global from '~/client/script/obj/global';
@@ -161,6 +160,15 @@ class Router extends WebApp {
         const module = await import('~/client/script/page/Home');
         const Home = module.default;
         this.addRoute('/', Home);
+      }
+      location.to(path);
+      this.jump = true;
+    });
+    emitter.on('page/quickStart', async ({ path, }) => {
+      if (this.checkRoute('/quickStart') === false) {
+        const module = await import('~/client/script/page/QuickStart');
+        const QuickStart = module.default;
+        this.addRoute('/quickStart', QuickStart);
       }
       location.to(path);
       this.jump = true;
