@@ -1,5 +1,7 @@
 import React from 'react';
 import Page from '~/client/script/component/Page';
+import HighLight from '~/client/script/component/HighLight';
+import Image from '~/client/script/component/Image';
 import Text from '~/client/script/component/Text';
 import MultiLineJavascript from '~/client/script/component/MultiLineJavascript';
 import H1 from '~/client/script/component/H1';
@@ -7,6 +9,8 @@ import H2 from '~/client/script/component/H2';
 import Ul from '~/client/script/component/Ul';
 import Li from '~/client/script/component/Li';
 import style from './index.module.css';
+import checkVersionImg from './checkVersion.png';
+import checkDependenciesImg from './checkDependencies.png';
 import '~/client/style/hljs.css';
 
 class Home extends Page {
@@ -91,7 +95,21 @@ class Home extends Page {
         <MultiLineJavascript javascriptCode={javascriptCode2} />
         <Text>Fulmination output code example 3:</Text>
         <MultiLineJavascript javascriptCode={javascriptCode3} />
-        <H2>*Result:</H2>
+        <H2>*Effect:</H2>
+        <Text>
+          The open source project <HighLight>"Mien"</HighLight> users fulmination for version verification:
+        </Text>
+        <Image
+          src={checkVersionImg} alt="mien version verification picture"
+        />
+        <Text>
+          The open source project <HighLight>"Mien"</HighLight> uses fulmination for denpendency checking:
+        </Text>
+        <Image
+          src={checkDependenciesImg} alt="mien dependency check picture"
+        />
+        <H2>*Conclusion:</H2>
+        <Text>Download and install <HighLight>"Fulmination"</HighLight>,hope you will enjoy it.</Text>
       </div>
     );
   }
