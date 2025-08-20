@@ -4206,10 +4206,10 @@ glow.js@^0.0.34:
   resolved "https://registry.yarnpkg.com/glow.js/-/glow.js-0.0.34.tgz#b57ea14d5c550b81bdeea49fe788db18fd9cacac"
   integrity sha512-WNbmR9OG1QAsmzeLLvw/H7nUuT2d8j5nLI0HMFCSrRmUpODf6lpf7Esd+ioMJeIGU++IoA0yxW4UcRUYdx9lMQ==
 
-glow.js@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/glow.js/-/glow.js-1.0.12.tgz#394cd4ae7edd632b711e959b6926a60dd6c437ee"
-  integrity sha512-pHmwjsJRUPjEfrbX0cQoQQcA7nf8Q4r3D5GhKLIfjc1JJlWw1kwoQ8N3FdpR6QXmvJLhW0ehaIO5nBS1R++BDg==
+glow.js@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/glow.js/-/glow.js-1.0.14.tgz#6311d3dcc8329afaa415267fa9bc910ee1f4a244"
+  integrity sha512-s4NhHbZTEERR2z9BVWVeGvKEgyMyL6upaZTzPTGW+/SzzfBf04J9emVr76/u2NIaX/JwcHUouQKCAEJe5uTslA==
 
 gopd@^1.0.1, gopd@^1.2.0:
   version "1.2.0"

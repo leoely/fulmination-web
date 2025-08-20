@@ -14,8 +14,8 @@ import checkDependenciesImg from './checkDependencies.png';
 import '~/client/style/hljs.css';
 
 class Home extends Page {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.javascriptCode1 = "fulmination.scan('(+) bold: hello fulmination text.')";
     this.javascriptCode2 = [
       "fulmination.scan(`",

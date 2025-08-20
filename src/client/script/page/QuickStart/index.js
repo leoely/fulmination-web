@@ -1,68 +1,110 @@
 import React from 'react';
 import Page from '~/client/script/component/Page';
+import H2 from '~/client/script/component/H2';
+import HighLight from '~/client/script/component/HighLight';
 import Text from '~/client/script/component/Text';
 import Format from '~/client/script/component/Format';
 import Formats from '~/client/script/component/Formats';
+import Switch from '~/client/script/component/Switch';
+import Sh from '~/client/script/component/Sh';
+import Sc from '~/client/script/component/Sc';
+import Sci from '~/client/script/component/Sci';
+import Shi from '~/client/script/component/Shi';
+import global from '~/client/script/obj/global';
 import style from './index.module.css';
 
+const {
+  emitter,
+} = global;
+
 class QuickStart extends Page {
+  constructor(props) {
+    super(props);
+    this.state = {
+      installActive: 0,
+      upgradeActive: 0,
+    };
+    this.bindEvent();
+  }
+
+  bindEvent() {
+    emitter.on('install:active', ({ idx, }) => {
+      this.setState({
+        installActive: idx,
+      });
+    });
+  }
+
   render() {
+    const { installActive, } = this.state;
     return(
       <div className={style.quickstart}>
+        <H2>*Prerequisites:</H2>
         <Text>
-          Fulmination is a pure text color project.Parse input file format as
-          "ctf" output pure text with color."ctf" mean color text format.ctf
-          file format has own syntax,user can color text by their own special
-          need.ctf syntax is semantic and beatiful syntax.User will enjoy when
-          they write ctf file.ctf use by chalk project to color pure text.User
-          can also watch and learn chalk.That's will be helpful for you use ctf
-          file.
+          <HighLight>"Fulmination"</HighLight> is developed using the
+          <HighLight>"Node.js"</HighLight> platform.This means that if the main
+          program interface is also expose to
+          <HighLight>"Javascript"</HighLight>, most of the time you need to use
+          the <HighLight>"Javascript"</HighLight> language to use fulmination.
+          Therefore,you need to master <HighLight>"Javascript"</HighLight> to
+          use <HighLight>"Fulmination"</HighLight>.The terminal only exists in
+          the <HighLight>"Node.js"</HighLight>.The
+          <HighLight>"Node.js"</HighLight> also needs to be installed.
         </Text>
         <Text>
-          Text below is use ctf syntax.ctf format text with "format" and "text"
-          and so on concept.
+          <HighLight>"Fulmination"</HighLight> is implemented through
+          compilation and defines new syntax and comceptual operations.
+          <HighLight>"Fulmination"</HighLight> handles the color and formatting
+          of text in the underlying terminal.Therefore,beyond the information
+          provided in this document,knowledge of the underlying terminals is not
+          required to use <HighLight>"Fulmination"</HighLight>.
         </Text>
-        <Formats>
-          <Format>
-            (+) bold; red: This is ctf text syntax (+) dim; underline: ctf text will be in same line.
-          </Format>
-          <Format> </Format>
-          <Format>
-            [+] bold; green:
-          </Format>
-          <Format>
-              | This is ctf passage syntax.
-          </Format>
-          <Format>
-              | Each passage will in different line.
-          </Format>
-          <Format>
-              | Each passage is start with delimiter.
-          </Format>
-        </Formats>
+        <H2>*Installation:</H2>
         <Text>
-          And ctf also has chalk syntax section.
+          <HighLight>"Fulmination"</HighLight> is a
+          <HighLight>"Javascript"</HighLight>package that needs to be installed
+          using a <HighLight>"Javascript"</HighLight> package mananger.
         </Text>
-        <Formats>
-          <Format>
-            (+) bold: bold, underline and so on is chalk style. (+) underline:
-            You can get this section document in chalk. &
-          </Format>
-          <Format>
-            (+) bold: text and passage use same chalk style.
-          </Format>
-          <Format> </Format>
-          <Format>
-            [+] bold:
-          </Format>
-          <Format>
-            | style use "" as delimiter, passage use "| as delimiter.
-          </Format>
-          <Format>
-            | Passage apply style to all passage.Text apply style only to one
-            text.
-          </Format>
-        </Formats>
+        <Switch>
+          <Sh>
+            <Shi
+              key={0} idx={0} type="install"
+              className={[installActive === 0 ? style.installActive : null]}
+            >
+              yarn
+            </Shi>
+            <Shi
+              key={1} idx={1} type="install"
+              className={[installActive === 1 ? style.installActive : null]}
+            >
+              pnpm
+            </Shi>
+            <Shi
+              key={2} idx={2} type="install"
+              className={[installActive === 2 ? style.installActive : null]}
+            >
+              npm
+            </Shi>
+          </Sh>
+          <Sc>
+            <Sci key={0}
+              className={[installActive === 0 ? style.installShow : null]}
+            >
+              <Format format="shell">yarn add fulmination</Format>
+            </Sci>
+            <Sci key={1}
+              className={[installActive === 1 ? style.installShow : null]}
+            >
+              <Format format="shell">pnpm add fulmination</Format>
+            </Sci>
+            <Sci key={2}
+              className={[installActive === 2 ? style.installShow : null]}
+            >
+              <Format format="shell">npm install fulmination</Format>
+            </Sci>
+          </Sc>
+        </Switch>
+        <H2>*Conception:</H2>
       </div>
     );
   }

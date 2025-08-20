@@ -1,3 +1,7 @@
 .quickstart
   padding: 27px
   background-color: rgb(20, 20, 20)
+.installActive
+  margin-bottom: 0px
+.installShow
+  display: flex

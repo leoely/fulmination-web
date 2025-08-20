@@ -1,5 +1,7 @@
 .command
-  color: rgb(50, 50, 50)
+  color: rgb(50, 50, 150)
+.subCommand
+  color: rgb(22, 112, 123)
 .filename
   color: rgb(230, 121, 42)
 .dot
