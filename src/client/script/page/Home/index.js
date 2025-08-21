@@ -97,13 +97,15 @@ class Home extends Page {
         <MultiLineJavascript javascriptCode={javascriptCode3} />
         <H2>*Effect:</H2>
         <Text>
-          The open source project <HighLight>"Mien"</HighLight> users fulmination for version verification:
+          The open source project <HighLight>"Mien"</HighLight> users <HighLight>"Fulmination"</HighLight>
+          for version verification:
         </Text>
         <Image
           src={checkVersionImg} alt="mien version verification picture"
         />
         <Text>
-          The open source project <HighLight>"Mien"</HighLight> uses fulmination for denpendency checking:
+          The open source project <HighLight>"Mien"</HighLight> uses <HighLight>"Fulmination"</HighLight>
+          for denpendency checking:
         </Text>
         <Image
           src={checkDependenciesImg} alt="mien dependency check picture"

@@ -10,9 +10,9 @@ import Sh from '~/client/script/component/Sh';
 import Sc from '~/client/script/component/Sc';
 import Sci from '~/client/script/component/Sci';
 import Shi from '~/client/script/component/Shi';
+import Style from '~/client/script/component/Style';
+import Styles from '~/client/script/component/Styles';
 import global from '~/client/script/obj/global';
-import textRenderingImg from './text-rendering.png';
-import paragraphRenderingImg from './paragraph-rendering.png';
 import style from './index.module.css';
 
 const {
@@ -46,7 +46,7 @@ class QuickStart extends Page {
   render() {
     const { installActive, } = this.state;
     return(
-      <div className={style.quickstart}>
+      <div className={style.quickStart}>
         <H2>*Prerequisites:</H2>
         <Text>
           <HighLight>"Fulmination"</HighLight> is developed using the
@@ -152,6 +152,11 @@ class QuickStart extends Page {
           after the above code is
           actually executed.
         </Text>
+        <Styles>
+          <Style styls={['bold', 'red']}>this is fulmination an example of fulmination text.</Style>
+          <Style styls={['inline', 'bold', 'green']}>this is an example of fulmination text without line breaks.</Style>
+          <Style styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
+        </Styles>
         <Text>
           A fulmination paragraph begins with <HighLight>"[+]"</HighLight> and
           automatically wraps each lineformatting described is
@@ -171,6 +176,10 @@ class QuickStart extends Page {
           after the above code is
           actually executed.
         </Text>
+        <Styles>
+          <Style styls={['bold', 'green']}>this is an exmpale of a fulmination paragraph.</Style>
+          <Style styls={['bold', 'green']}>each line will automatically wrap.</Style>
+        </Styles>
       </div>
     );
   }

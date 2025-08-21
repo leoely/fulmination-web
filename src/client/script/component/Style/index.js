@@ -1,0 +1,33 @@
+import React from 'react';
+import style from './index.module.css';
+
+class Style extends React.Component {
+  render() {
+    const { styls, } = this.props;
+    const classes = styls.map((styl) => {
+      switch (styl) {
+        case 'green':
+          return style.green;
+        case 'red':
+          return style.red;
+        case 'blue':
+          return style.blue;
+        case 'black':
+          return style.black;
+        case 'bold':
+          return style.bold;
+        case 'bgWhite':
+          return style.bgWhite;
+        case 'inline':
+          return style.inline;
+      }
+    });
+    return (
+      <div className={[style.style].concat(classes).join(' ')}>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
+export default Style;
