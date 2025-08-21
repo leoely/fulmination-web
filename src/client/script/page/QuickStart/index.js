@@ -11,6 +11,8 @@ import Sc from '~/client/script/component/Sc';
 import Sci from '~/client/script/component/Sci';
 import Shi from '~/client/script/component/Shi';
 import global from '~/client/script/obj/global';
+import textRenderingImg from './text-rendering.png';
+import paragraphRenderingImg from './paragraph-rendering.png';
 import style from './index.module.css';
 
 const {
@@ -24,6 +26,7 @@ class QuickStart extends Page {
       installActive: 0,
       upgradeActive: 0,
     };
+    this.handleClick = this.handleClick.bind(this);
     this.bindEvent();
   }
 
@@ -33,6 +36,11 @@ class QuickStart extends Page {
         installActive: idx,
       });
     });
+  }
+
+  handleClick() {
+    const { idx, } = this.props
+    emitter.send('install:active', { idx, });
   }
 
   render() {
@@ -68,19 +76,19 @@ class QuickStart extends Page {
         <Switch>
           <Sh>
             <Shi
-              key={0} idx={0} type="install"
+              key={0} idx={0}
               className={[installActive === 0 ? style.installActive : null]}
             >
               yarn
             </Shi>
             <Shi
-              key={1} idx={1} type="install"
+              key={1} idx={1}
               className={[installActive === 1 ? style.installActive : null]}
             >
               pnpm
             </Shi>
             <Shi
-              key={2} idx={2} type="install"
+              key={2} idx={2}
               className={[installActive === 2 ? style.installActive : null]}
             >
               npm
@@ -105,6 +113,64 @@ class QuickStart extends Page {
           </Sc>
         </Switch>
         <H2>*Conception:</H2>
+        <Text>
+          Files written according to fulmination's syntax should have a suffix
+          of <HighLight>".fulmination"</HighLight> suffix.fulmination contains
+          two different syntaxes:<HighLight>"text"</HighLight> and
+          <HighLight>"paragraph"</HighLight>.
+        </Text>
+        <Text>
+          The synatx of fulmination beign with <HighLight>"(+)"</HighLight> or
+          <HighLight>"[+]"</HighLight>.<HighLight>"+"</HighLight> is a semantic
+          symbol indicating the addition of a text or paragraph.
+          <HighLight>"Parenthesess"</HighLight> and
+          <HighLight>"Breacktes"</HighLight> are used to disinguish between
+          text and paragraphs,and brackets are used to indicate the color and
+          formatting of the newly added text or paragraph.
+        </Text>
+        <Text>
+          A fulmination consists of a single <HighLight>"text"</HighLight>,
+          while a paragrph consists of mutlple <HighLight>"lines"</HighLight>.
+        </Text>
+        <Text>
+          Fulmination text begins with <HighLight>"(+)"</HighLight> and does
+          not wrap.You must manually add the <HighLight>"&"</HighLight> symbol
+          to wrap it.The formatting applies only to the text in the current
+          area.It's suitable for formatting small amounts of text with complex
+          formatting.
+        </Text>
+        <Formats>
+          <Format format="fulmination">
+            (+) red; bold: this is fulmination an example of fulmination text. &
+          </Format>
+          <Format format="fulmination">
+            (+) green; bold: this is an example of fulmination text without line breaks.
+          </Format>
+        </Formats>
+        <Text>
+          This is the <HighLight>"effect picture"</HighLight> in the terminal
+          after the above code is
+          actually executed.
+        </Text>
+        <Text>
+          A fulmination paragraph begins with <HighLight>"[+]"</HighLight> and
+          automatically wraps each lineformatting described is
+          automatically applied to the paragraph.This is useful for applying
+          repetitive formatting to a large number of paragraphs.Each line in a
+          paragraph starts with <HighLight>"|"</HighLight>.Each
+          <HighLight>"|"</HighLight> indicates an independent line and is
+          displayed as independent line on the terminal.
+        </Text>
+        <Formats>
+          <Format key={0} format="fulmination">[+] bold; green:</Format>
+          <Format key={1} format="fulmination">| this is an exmpale of a fulmination paragraph.</Format>
+          <Format key={2} format="fulmination">| each line will automatically wrap.</Format>
+        </Formats>
+        <Text>
+          This is the <HighLight>"effect picture"</HighLight> in the terminal
+          after the above code is
+          actually executed.
+        </Text>
       </div>
     );
   }

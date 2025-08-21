@@ -3,9 +3,9 @@ import style from './index.module.css';
 
 class Image extends React.Component {
   render() {
-    const { src, alt, } = this.props;
+    const { src, alt, width, } = this.props;
     return (
-      <img className={style.image} src={src} alt={alt} />
+      <img style={{ width, }} className={style.image} src={src} alt={alt} />
     );
   }
 }
