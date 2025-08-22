@@ -3,7 +3,10 @@ import style from './index.module.css';
 
 class Style extends React.Component {
   render() {
-    const { styls, } = this.props;
+    let { styls, } = this.props;
+    if (styls === undefined) {
+      styls = [];
+    }
     const classes = styls.map((styl) => {
       switch (styl) {
         case 'green':
@@ -14,10 +17,14 @@ class Style extends React.Component {
           return style.blue;
         case 'black':
           return style.black;
+        case 'cyan':
+          return style.cyan;
         case 'bold':
           return style.bold;
         case 'bgWhite':
           return style.bgWhite;
+        case 'normal':
+          return style.normal;
         case 'inline':
           return style.inline;
       }

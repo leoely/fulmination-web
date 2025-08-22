@@ -4,9 +4,10 @@ import style from './index.module.css';
 export default function fulminationTemplate(e) {
   const { type, elem, } = e;
   switch (type) {
-    case 'asterisk':
     case ' ':
-      return <span> </span>;
+      return <span>&nbsp;</span>;
+    case 'asterisk':
+      return <span className={style.asterisk}>{elem}</span>;
     case 'semicolon':
       return <span className={style.semicolon}>{elem}</span>;
     case 'format':
