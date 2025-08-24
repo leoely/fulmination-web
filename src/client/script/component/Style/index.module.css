@@ -14,6 +14,8 @@
   color: rgb(0, 0, 0)
 .cyan
   color: rgb(0, 255, 255)
+.magenta
+  color: rgb(255, 0, 255)
 .bold
   font-weight: 500
 .bgWhite

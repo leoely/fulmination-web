@@ -14,11 +14,11 @@ function getInitActive() {
       return 2;
     case '/reference':
       return 3;
-    case '/commandLine':
+    case '/applicationProgramInterface':
       return 4;
     case '/codeStyle':
       return 5;
-    case '/applicationProgramInterface':
+    case '/commandLine':
       return 6;
   }
 }
@@ -54,13 +54,13 @@ class Tab extends React.Component {
         emitter.send('page/reference', { path: '/reference', });
         break;
       case 4:
-        emitter.send('page/commandLine', { path: '/commandLine', });
+        emitter.send('page/applicationProgramInterface', { path: '/applicationProgramInterface', });
         break;
       case 5:
         emitter.send('page/codeStyle', { path: '/codeStyle', });
         break;
       case 6:
-        emitter.send('page/applicationProgramInterface', { path: '/applicationProgramInterface', });
+        emitter.send('page/commandLine', { path: '/commandLine', });
         break;
     }
   }
@@ -72,9 +72,9 @@ class Tab extends React.Component {
         <li key={1} className={[style.item, active === 1 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(1)} >Home</li>
         <li key={2} className={[style.item, active === 2 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(2)} >Quick Start</li>
         <li key={3} className={[style.item, active === 3 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(3)} >Reference</li>
-        <li key={4} className={[style.item, active === 4 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(4)} >Command Line</li>
+        <li key={6} className={[style.item, active === 4 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(4)} >API</li>
         <li key={5} className={[style.item, active === 5 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(5)} >Code Style</li>
-        <li key={6} className={[style.item, active === 6 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(6)} >API</li>
+        <li key={4} className={[style.item, active === 6 ? style.active : null].join(' ')} onClick={(e) => this.handleClick(6)} >Command Line</li>
       </ul>
     );
   }

@@ -19,6 +19,8 @@ class Style extends React.Component {
           return style.black;
         case 'cyan':
           return style.cyan;
+        case 'magenta':
+          return style.magenta;
         case 'bold':
           return style.bold;
         case 'bgWhite':
