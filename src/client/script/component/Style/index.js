@@ -13,6 +13,8 @@ class Style extends React.Component {
           return style.green;
         case 'red':
           return style.red;
+        case 'yellow':
+          return style.yellow;
         case 'blue':
           return style.blue;
         case 'black':

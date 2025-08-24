@@ -5,6 +5,7 @@ import {
 import Loading from '~/client/script/page/Loading';
 import UpdateConfirm from '~/client/script/component/UpdateConfirm';
 import WebApp from '~/client/script/component/WebApp';
+import Container from '~/client/script/component/Container';
 import Tab from '~/client/script/component/Tab';
 import global from '~/client/script/obj/global';
 import style from './index.module.css';

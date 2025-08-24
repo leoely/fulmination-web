@@ -1,6 +1,7 @@
 .container
   display: flex
   min-height: 100%
+  height: fit-content
   max-width: 1264px
   justify-content: center
 .inner

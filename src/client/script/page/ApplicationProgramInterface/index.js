@@ -9,6 +9,7 @@ import Td from '~/client/script/component/Td';
 import Text from '~/client/script/component/Text';
 import Style from '~/client/script/component/Style';
 import Styles from '~/client/script/component/Styles';
+import Cursor from '~/client/script/component/Cursor';
 import MultiLineJavascript from '~/client/script/component/MultiLineJavascript';
 import style from './index.module.css';
 import '~/client/style/hljs.css';
@@ -74,12 +75,50 @@ class ApplicationProgramInterface extends Page {
       "  '\x1B[35mthis is case of code 2\x1B[39m'",
       "]",
     ].join('\n');
+    this.javascriptCode9 = [
+      "import * as readline from 'readline';",
+      "import { stdin as input, stdout as output } from 'process';",
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "const rl = readline.createInterface({ input, output });",
+      "rl.question(",
+      "  fulmination.generate('(+) yellow: the result string after parsing is returned as the return value.'),",
+      "  (answer) => {",
+      "    rl.close();",
+      "  },",
+      ");",
+    ].join('\n');
+    this.javascriptCode10 = [
+      "const fulmination = new Fulmination();",
+      "console.log(JSON.stringify(fulmination.generate('(+) yellow: the result string after parsing is returned as the return value.')));",
+    ].join('\n')
+    this.javascriptCode11 = '"\\u001b[33mthe result string after parsing is returned as the return value.\\u001b[39m"';
+    this.javascriptCode12 = [
+      "const fulmination = new Fulmination();",
+      "console.log(JSON.stringify(fulmination.generateAll([",
+      "  ['(+) yellow: the doucment here will be yellow', 0],",
+      "  ['(+) blue:', 1],",
+      "  ['(+) yellow: this doucment here will be blue', 2],",
+      "])));",
+    ].join('\n');
+    this.javascriptCode13 = '"\u001b[33mthe doucment here will be yellow\u001b[39m\u001b[34m(+) yellow: this doucment here will be blue\u001b[39m"';
+    this.javascriptCode14 = [
+      "const fulmination = new Fulmination();",
+      "console.log(fulmination.generateAll([",
+      "  ['(+) yellow: the doucment here will be yellow', 0],",
+      "  ['(+) blue:', 1],",
+      "  ['(+) yellow: this doucment here will be blue', 2],",
+      "]));",
+    ].join('\n');
   }
 
   render() {
     const {
       javascriptCode1, javascriptCode2, javascriptCode3, javascriptCode4,
       javascriptCode5, javascriptCode6, javascriptCode7, javascriptCode8,
+      javascriptCode9, javascriptCode10, javascriptCode11, javascriptCode12,
+      javascriptCode13, javascriptCode14,
     } = this;
     return (
       <div className={style.applicationProgramInterface}>
@@ -147,7 +186,7 @@ class ApplicationProgramInterface extends Page {
           to the return value.
         </Text>
         <MultiLineJavascript javascriptCode={javascriptCode2}  />
-        <Text>The <HighLight>parameter</HighLight> list is as follows:</Text>
+        <Text>The <HighLight>"parameter"</HighLight> list is as follows:</Text>
         <Th>Parameter list of the scan method:</Th>
         <Table>
           <Tr>
@@ -208,7 +247,7 @@ class ApplicationProgramInterface extends Page {
             <Td>array</Td>
             <Td>array</Td>
             <Td>
-              none of elements are typed using the fulmination syntax string and
+              each of elements are typed using the fulmination syntax string and
               and numeric types
             </Td>
           </Tr>
@@ -244,7 +283,7 @@ class ApplicationProgramInterface extends Page {
           <Tr>
             <Td>1</Td>
             <Td>
-              The string is parsed as a format list,which is the part before
+              The string is parsed as a type and format list,which is the part before
               the fulmination words.
             </Td>
           </Tr>
@@ -329,6 +368,173 @@ class ApplicationProgramInterface extends Page {
         </Text>
         <MultiLineJavascript javascriptCode={javascriptCode8} />
         <H2>#Method "generate"</H2>
+        <Text>
+          Often,the need isn't to output text directly to the screen,but rather
+          to compile the result,combine it,and then output it to the screen.This
+          can also be be a <HighLight>"Node.js"</HighLight> interface that
+          requires a string containing the parsed result,such as
+          <HighLight>"rl.question"</HighLight>.This is where
+          <HighLight>"generate"</HighLight> comes in handy.Many libraries are
+          unaware of <HighLight>"fulmination"</HighLight>,and many don't use it.
+          In these cases,passing the parsed result string is the only solution.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode9} />
+        <Text>
+          The following is the corresponding terminal effect display:
+        </Text>
+        <Styles>
+          <Style styls={['yellow', 'inline']}>the result string after parsing is returned as the return value.</Style>
+          <Cursor />
+        </Styles>
+        <Text>
+          There are no line breaks,but no <HighLight>"%"</HighLight> signs are
+          added,which is what <HighLight>"rl.question"</HighLight> displays.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode10} />
+        <Text>
+          Print out the parsed results:
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode11} />
+        <Text>
+          The <HighLight>"generate"</HighLight> method does not provide a
+          <HighLight>"debug"</HighLight> mode,because usiing
+          <HighLight>"JSON.stringify"</HighLight>,debugging is already very
+          convenient.
+        </Text>
+        <Text>The <HighLight>"parameter"</HighLight> list is as follows:</Text>
+        <Th>Parameter list of the generate method:</Th>
+        <Table>
+          <Tr>
+            <Td>text</Td>
+            <Td>string</Td>
+            <Td>using fulmination syntax strings</Td>
+          </Tr>
+        </Table>
+        <Text>
+          The <HighLight>"return"</HighLight> value of the
+          <HighLight>"generate"</HighLight> method:
+        </Text>
+        <Th>the <HighLight>"return"</HighLight> value of the generate method:</Th>
+        <Table>
+          <Tr>
+            <Td>string</Td>
+            <Td>string parsing results that can be recognized by node.js</Td>
+          </Tr>
+        </Table>
+        <H2>#Method "generateAll"</H2>
+        <Text>
+          <HighLight>"scanAll"</HighLight> is designed to solve the problem of
+          <HighLight>"scan"</HighLight> escaping,and
+          <HighLight>"generateAll"</HighLight> is also designed to solve the
+          problem of <HighLight>"generate"</HighLight> escapeing.it is also the
+          most recommended escaping solution for the
+          <HighLight>"generate"</HighLight> series.
+        </Text>
+        <Text>The <HighLight>parameter</HighLight> list is as follows:</Text>
+        <Th>Parameter list of the scan method:</Th>
+        <Table>
+          <Tr>
+            <Td>array</Td>
+            <Td>array</Td>
+            <Td>
+              each of elements are typed using the fulmination syntax string and
+              and numeric types
+            </Td>
+          </Tr>
+        </Table>
+        <Text>
+          The format of the elements of the <HighLight>"scanAll"</HighLight>
+          array is <HighLight>"[text, code]"</HighLight>.
+        </Text>
+        <Th>Specific format of scanAll array elements:</Th>
+        <Table>
+          <Tr>
+            <Td>text</Td>
+            <Td>string</Td>
+            <Td>a string using the fulmination syntax</Td>
+          </Tr>
+          <Tr>
+            <Td>code</Td>
+            <Td>number</Td>
+            <Td>number representing the type</Td>
+          </Tr>
+        </Table>
+        <Text>
+          The following is a list of <HighLight>code</HighLight> meanings:
+        </Text>
+        <Th>List of code:</Th>
+        <Table>
+          <Tr>
+            <Td>0</Td>
+            <Td>
+              The string is parsed as a normal fulmination syntax string.
+            </Td>
+          </Tr>
+          <Tr>
+            <Td>1</Td>
+            <Td>
+              The string is parsed as a type and format list,which is the part before
+              the fulmination words.
+            </Td>
+          </Tr>
+          <Tr>
+            <Td>2</Td>
+            <Td>
+              The string will be fully escaped.
+            </Td>
+          </Tr>
+        </Table>
+        <Text>
+          <HighLight>"Code 0"</HighLight> is a string with normal
+          <HighLight>"fulmination"</HighLight> syntax,so it can appear anywhere
+          in the array.<HighLight>"Code 1"</HighLight> specifies the format and
+          type,and <HighLight>"Code 2"</HighLight> defineds the content that
+          needs to be escaped.Therefore,<HighLight>"Code 1"</HighLight>must
+          appera first,following by <HighLight>"Code 2"</HighLight>.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode12} />
+        <Text>
+          Print out the parsed results:
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode13} />
+        <Text>
+          The string contents reveal how the terminal's underlying layer
+          recoginzes and parses them.The essentially involves setting the style
+          and color,then reset the words.This process repeats until all words is
+          formatted as desired.This process reveals which string are directoly
+          recognized by the terminal's underlying layter.Of course,since
+          <HighLight>"fulmination"</HighLight>
+          is used for processing,understanding this is not essential.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode14} />
+        <Text>
+          Using <HighLight>"Node.js"</HighLight> like
+          <HighLight>"console.log"</HighLight>,string that can be recoginized
+          by the underlying terminal can be displayed on the screen.This is also
+          main application scenario of the <HighLight>"generate"</HighLight>
+          series of APIs.
+        </Text>
+        <Text>
+          The following is the corresponding terminal effect display:
+        </Text>
+        <Styles>
+          <Style styls={['yellow', 'inline']}>the doucment here will be yellow</Style>
+          <Style styls={['blue', 'inline']}>(+) yellow: this doucment here will be blue</Style>
+        </Styles>
+        <Text>
+          <HighLight>"console.log"</HighLight> adds line breaks by default,so
+          there are <HighLight>"%"</HighLight> prompts.
+        </Text>
+        <H2>#Postscript</H2>
+        <Text>
+          Compared to pure <HighLight>"Fulmination"</HighLight>,the
+          <HighLight>"Javascript-based"</HighLight> API is more powerful,
+          expressive,and has a more elegant syntax.while it might not be
+          immedidately apparent when you're new to
+          <HighLight>"Fulmination"</HighLight>,it's easy to see the benefits as
+          you use it.Therefore,in most cases,
+          <HighLight>"Fulmination"</HighLight> is the recommended approach.
+        </Text>
       </div>
     );
   }
