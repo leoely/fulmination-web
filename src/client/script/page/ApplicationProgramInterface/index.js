@@ -229,8 +229,8 @@ class ApplicationProgramInterface extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['bold']}>a string using the fulmination syntax</Style>
-          <Style styls={['bold']}>by default,the output is sent to the terminal screen</Style>
+          <Style idx={0} styls={['bold']}>a string using the fulmination syntax</Style>
+          <Style idx={1} styls={['bold']}>by default,the output is sent to the terminal screen</Style>
         </Styles>
         <H2>#Method "scanAll"</H2>
         <Text>
@@ -295,6 +295,25 @@ class ApplicationProgramInterface extends Page {
           </Tr>
         </Table>
         <Text>
+          it is important to note that the <HighLight>"paragraph"</HighLight>
+          type and format string contain<HighLight>"|"</HighLight>,because the
+          actual words is after <HighLight>"|"</HighLight>.The following two
+          types and format strings are compared:
+        </Text>
+        <Th>List of type and format string:</Th>
+        <Table>
+          <Tr>
+            <Td>text</Td>
+            <Td>(+) format1; format2:</Td>
+            <Td>(+) bold:</Td>
+          </Tr>
+          <Tr>
+            <Td>paragraph</Td>
+            <Td>[+] format1; format2: <br/>|</Td>
+            <Td>[+] red: <br/>|</Td>
+          </Tr>
+        </Table>
+        <Text>
           <HighLight>"Code 0"</HighLight> is a string with normal
           <HighLight>"fulmination"</HighLight> syntax,so it can appear anywhere
           in the array.<HighLight>"Code 1"</HighLight> specifies the format and
@@ -334,9 +353,9 @@ class ApplicationProgramInterface extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['green', 'inline']}>this is case of code 0</Style>
-          <Style styls={['magenta', 'inline']}>(+) cyan: this is case of code 1</Style>
-          <Style styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
+          <Style idx={0} styls={['green', 'inline']}>this is case of code 0</Style>
+          <Style idx={1} styls={['magenta', 'inline']}>(+) cyan: this is case of code 1</Style>
+          <Style idx={2} styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
         </Styles>
         <Th>return value</Th>
         <Table>
@@ -383,7 +402,7 @@ class ApplicationProgramInterface extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['yellow', 'inline']}>the result string after parsing is returned as the return value.</Style>
+          <Style idx={0} styls={['yellow', 'inline']}>the result string after parsing is returned as the return value.</Style>
           <Cursor />
         </Styles>
         <Text>
@@ -485,6 +504,25 @@ class ApplicationProgramInterface extends Page {
           </Tr>
         </Table>
         <Text>
+          it is important to note that the <HighLight>"paragraph"</HighLight>
+          type and format string contain<HighLight>"|"</HighLight>,because the
+          actual words is after <HighLight>"|"</HighLight>.The following two
+          types and format strings are compared:
+        </Text>
+        <Th>List of type and format string:</Th>
+        <Table>
+          <Tr>
+            <Td>text</Td>
+            <Td>(+) format1; format2:</Td>
+            <Td>(+) bold:</Td>
+          </Tr>
+          <Tr>
+            <Td>paragraph</Td>
+            <Td>[+] format1; format2: <br/>|</Td>
+            <Td>[+] red: <br/>|</Td>
+          </Tr>
+        </Table>
+        <Text>
           <HighLight>"Code 0"</HighLight> is a string with normal
           <HighLight>"fulmination"</HighLight> syntax,so it can appear anywhere
           in the array.<HighLight>"Code 1"</HighLight> specifies the format and
@@ -493,6 +531,33 @@ class ApplicationProgramInterface extends Page {
           appera first,following by <HighLight>"Code 2"</HighLight>.
         </Text>
         <MultiLineJavascript javascriptCode={javascriptCode12} />
+        <Text>
+          The above format and tpye correspond to the code
+          <HighLight>"(+) blue:"</HighLight>."(+)" corresponding type is
+          text.<HighLight>"blue"</HighLight> corresponding format is
+          <HighLight>"blue"</HighLight>.
+        </Text>
+        <Th>Code correspondance table:</Th>
+        <Table>
+          <Tr>
+            <Td>(+)</Td>
+            <Td>
+              type
+            </Td>
+            <Td>
+              type is text
+            </Td>
+          </Tr>
+          <Tr>
+            <Td>blue:</Td>
+            <Td>
+              format
+            </Td>
+            <Td>
+              format is blue
+            </Td>
+          </Tr>
+        </Table>
         <Text>
           Print out the parsed results:
         </Text>
@@ -518,8 +583,8 @@ class ApplicationProgramInterface extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['yellow', 'inline']}>the doucment here will be yellow</Style>
-          <Style styls={['blue', 'inline']}>(+) yellow: this doucment here will be blue</Style>
+          <Style idx={0} styls={['yellow', 'inline']}>the doucment here will be yellow</Style>
+          <Style idx={1} styls={['blue', 'inline']}>(+) yellow: this doucment here will be blue</Style>
         </Styles>
         <Text>
           <HighLight>"console.log"</HighLight> adds line breaks by default,so

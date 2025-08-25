@@ -16,7 +16,7 @@ import '~/client/style/hljs.css';
 class Home extends Page {
   constructor(props) {
     super(props);
-    this.javascriptCode1 = "fulmination.scan('(+) bold: hello fulmination text.')";
+    this.javascriptCode1 = "fulmination.scan('(+) bold: hello fulmination text.');";
     this.javascriptCode2 = [
       "fulmination.scan(`",
       "  [+] bold:",

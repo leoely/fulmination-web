@@ -158,7 +158,7 @@ class Router extends WebApp {
     });
     emitter.on('page/', async ({ path, }) => {
       if (this.checkRoute('/') === false) {
-        const module = await import('~/client/script/page/Home');
+        const module = await import('~/client/script/page/CodeStyle');
         const Home = module.default;
         this.addRoute('/', Home);
       }

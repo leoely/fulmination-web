@@ -6,21 +6,22 @@ import formatShell from '~/client/script/lib/util/formatShell';
 
 class Format extends React.Component {
   render() {
-    const { format, } = this.props;
+    const { format, idx, } = this.props;
     let content;
     if (format === 'shell') {
-      content = <div className={style.format}>
+      content = <div key={idx} className={style.format}>
         {formatShell(this.props.children)}
       </div>
     } else if (format === 'javascript') {
       const html = formatJavascript(this.props.children);
       content = <div
+        key={idx}
         className={style.format}
         dangerouslySetInnerHTML={{__html: html}}
       >
       </div>
     } else {
-      content = <div className={style.format}>
+      content = <div key={idx} className={style.format}>
         {formatFulmination(this.props.children)}
       </div>
     }

@@ -18,9 +18,10 @@ class Shi extends React.Component {
   }
 
   render() {
-    const { style: inlineStyle, className, } = this.props;
+    const { style: inlineStyle, className, idx, } = this.props;
     return (
       <li
+        key={idx}
         className={[style.shi].concat(className).join(' ')} style={inlineStyle}
         onClick={this.handleClick}
       >

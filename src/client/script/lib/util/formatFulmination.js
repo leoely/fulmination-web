@@ -7,5 +7,5 @@ import fulminationTemplate from '~/client/script/lib/template/fulminationTemplat
 export default function formatFulmination(text) {
   const highLight = new HighLight(FulminationLexer);
   highLight.addLexer(FulminationLexer);
-  return highLight.parse(text).map((e) => fulminationTemplate(e));
+  return highLight.parse(text).map((e, idx) => fulminationTemplate(e, idx));
 }

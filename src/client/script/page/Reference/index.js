@@ -29,16 +29,16 @@ class Reference extends Page {
         </Text>
         <H2>#Spaces and line breaks</H2>
         <Formats>
-          <Format format="fulmiation">[+] bold: </Format>
-          <Format format="fulmiation">| the display will be the same</Format>
-          <Format format="fulmiation">[+] bold:| the display will be the same</Format>
+          <Format idx={0} format="fulmiation">[+] bold: </Format>
+          <Format idx={1} format="fulmiation">| the display will be the same</Format>
+          <Format idx={2} format="fulmiation">[+] bold:| the display will be the same</Format>
         </Formats>
         <Text>
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['bold']}>the display will be the same</Style>
-          <Style styls={['bold']}>the display will be the same</Style>
+          <Style idx={0} styls={['bold']}>the display will be the same</Style>
+          <Style idx={1} styls={['bold']}>the display will be the same</Style>
         </Styles>
         <Text>
           <HighLight>"Fulmination"</HighLight> will ignore
@@ -58,16 +58,16 @@ class Reference extends Page {
           adding text or paragraphs of other colors or styles.
         </Text>
         <Formats>
-          <Format format="fulmiation">(+) bold: add a fulmination text.</Format>
-          <Format format="fulmiation">(+) bold; green: symbol """+"" sign in front.</Format>
+          <Format idx={0} format="fulmiation">(+) bold: add a fulmination text.</Format>
+          <Format idx={1} format="fulmiation">(+) bold; green: symbol """+"" sign in front.</Format>
         </Formats>
         <Text>
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['bold', 'inline']}>add a fulmination text.</Style>
-          <Style styls={['bold', 'green', 'inline']}>symbol "+" sign in front</Style>
-          <Style styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
+          <Style idx={0} styls={['bold', 'inline']}>add a fulmination text.</Style>
+          <Style idx={1} styls={['bold', 'green', 'inline']}>symbol "+" sign in front</Style>
+          <Style idx={2} styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
         </Styles>
         <H2>#Symbol "(" and ")"</H2>
         <Text>
@@ -79,14 +79,14 @@ class Reference extends Page {
           description.
        </Text>
         <Formats>
-          <Format format="fulmiation">(+) green; bold: this is a fulmination text.</Format>
+          <Format idx={0} format="fulmiation">(+) green; bold: this is a fulmination text.</Format>
         </Formats>
         <Text>
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['bold', 'green', 'inline']}>this is a fulmination text.</Style>
-          <Style styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
+          <Style idx={0} styls={['bold', 'green', 'inline']}>this is a fulmination text.</Style>
+          <Style idx={1} styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
         </Styles>
         <H2>#Symbol "[" and "]"</H2>
         <Text>
@@ -94,18 +94,18 @@ class Reference extends Page {
           symbol combination indicates a group of paragraphs.
         </Text>
         <Formats>
-          <Format format="fulmiation">[+] blue:</Format>
-          <Format format="fulmiation">| This is a line of paragraph text</Format>
-          <Format format="fulmiation">| This is a line of paragraph text</Format>
-          <Format format="fulmiation">| This is a line of paragraph text</Format>
+          <Format idx={0} format="fulmiation">[+] blue:</Format>
+          <Format idx={1} format="fulmiation">| This is a line of paragraph text</Format>
+          <Format idx={2} format="fulmiation">| This is a line of paragraph text</Format>
+          <Format idx={3} format="fulmiation">| This is a line of paragraph text</Format>
         </Formats>
         <Text>
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['blue']}>This is a line of paragraph text</Style>
-          <Style styls={['blue']}>This is a line of paragraph text</Style>
-          <Style styls={['blue']}>This is a line of paragraph text</Style>
+          <Style idx={0} styls={['blue']}>This is a line of paragraph text</Style>
+          <Style idx={1} styls={['blue']}>This is a line of paragraph text</Style>
+          <Style idx={2} styls={['blue']}>This is a line of paragraph text</Style>
         </Styles>
         <H2>#Format</H2>
         <Text>
@@ -177,13 +177,13 @@ class Reference extends Page {
           combined.
         </Text>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             (+) forma1; format2: !!! This is just a demo format,not actual runable
             code.
         </Format>
         </Formats>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             (+) black; bgWhite: apply both ""black"" and ""bgWhile"" formats
             at the same time
             code.
@@ -193,8 +193,8 @@ class Reference extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['inline', 'bgWhite', 'black', 'normal']}>apply both "black" and "bgWhile" formats at the same time code.</Style>
-          <Style styls={['inline', 'bgWhite', 'black', 'normal']}>%</Style>
+          <Style idx={0} styls={['inline', 'bgWhite', 'black', 'normal']}>apply both "black" and "bgWhile" formats at the same time code.</Style>
+          <Style idx={1} styls={['inline', 'bgWhite', 'black', 'normal']}>%</Style>
         </Styles>
         <H2>#Symbol ":"</H2>
         <Text>
@@ -206,24 +206,24 @@ class Reference extends Page {
           <HighLight>"deafult"</HighLight> is white,no style.
         </Text>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             [+] format1, format2:
-        </Format>
-          <Format format="fulmiation">
+          </Format>
+          <Format idx={1}>
             | !!! This is just a demo format,not actual runable code.
-        </Format>
-          <Format format="fulmiation">
+          </Format>
+          <Format idx={2}>
             | !!! This is just a demo format,not actual runable code.
-        </Format>
+          </Format>
         </Formats>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             [+]:
-        </Format>
-          <Format format="fulmiation">
+          </Format>
+          <Format idx={1}>
             | this is the default style
           </Format>
-          <Format format="fulmination">
+          <Format idx={2}>
             | white,no style
           </Format>
         </Formats>
@@ -231,8 +231,8 @@ class Reference extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style>this is the default style</Style>
-          <Style>white,no style</Style>
+          <Style idx={0}>this is the default style</Style>
+          <Style idx={1}>white,no style</Style>
         </Styles>
         <H2>#Symbol "|"</H2>
         <Text>
@@ -247,13 +247,13 @@ class Reference extends Page {
           and varied colors and styles.
         </Text>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             [+] red:
-        </Format>
-          <Format format="fulmiation">
+          </Format>
+          <Format idx={1}>
             | will automatically wrap
           </Format>
-          <Format format="fulmination">
+          <Format idx={2}>
             | the same style will be applied
           </Format>
         </Formats>
@@ -261,8 +261,8 @@ class Reference extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['red']}>will automatically wrap</Style>
-          <Style styls={['red']}>the same style will be applied</Style>
+          <Style idx={0} styls={['red']}>will automatically wrap</Style>
+          <Style idx={1} styls={['red']}>the same style will be applied</Style>
         </Styles>
         <H2>#Symbol "*"</H2>
         <Text>
@@ -280,7 +280,7 @@ class Reference extends Page {
           and more visual semantic representation.
         </Text>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             (+) green: ** asterisks are required at the beginning and end ** (+) bold: use a spece   directly in the middle
           </Format>
         </Formats>
@@ -288,9 +288,9 @@ class Reference extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['green', 'inline']}>&nbsp;&nbsp;asterisks are required at the beginning and end&nbsp;&nbsp;</Style>
-          <Style styls={['bold', 'inline']}>use a spece&nbsp;&nbsp;&nbsp;directly in the middle</Style>
-          <Style styls={['inline', 'bgWhite', 'black', 'normal']}>%</Style>
+          <Style idx={0} styls={['green', 'inline']}>&nbsp;&nbsp;asterisks are required at the beginning and end&nbsp;&nbsp;</Style>
+          <Style idx={1} styls={['bold', 'inline']}>use a spece&nbsp;&nbsp;&nbsp;directly in the middle</Style>
+          <Style idx={2} styls={['inline', 'bgWhite', 'black', 'normal']}>%</Style>
         </Styles>
         <H2>#Symbol """</H2>
         <Text>
@@ -319,16 +319,16 @@ class Reference extends Page {
           <Tr><Td>*</Td><Td>"*</Td></Tr>
         </Table>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             [+] bold:
           </Format>
-          <Format format="fulmiation">
+          <Format idx={1}>
             | "" need to be escaped
           </Format>
-          <Format format="fulmiation">
+          <Format idx={2}>
             | "* need to be escaped
           </Format>
-          <Format format="fulmiation">
+          <Format idx={3}>
             | ect need to be escaped
           </Format>
         </Formats>
@@ -336,9 +336,9 @@ class Reference extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['bold']}>" need to be escaped</Style>
-          <Style styls={['bold']}>&nbsp;&nbsp;need to be escaped</Style>
-          <Style styls={['bold']}>ect need to be escaped</Style>
+          <Style idx={0} styls={['bold']}>" need to be escaped</Style>
+          <Style idx={1} styls={['bold']}>&nbsp;&nbsp;need to be escaped</Style>
+          <Style idx={2} styls={['bold']}>ect need to be escaped</Style>
         </Styles>
         <Text>
           The above solution handles many places that need to escaped,and the
@@ -351,7 +351,7 @@ class Reference extends Page {
           processing method is used.
         </Text>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             (+) green: "40 (+) green: These will be displayed as is
           </Format>
         </Formats>
@@ -359,8 +359,8 @@ class Reference extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['green', 'inline']}>(+) green: These will be displayed as is</Style>
-          <Style styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
+          <Style idx={0} styls={['green', 'inline']}>(+) green: These will be displayed as is</Style>
+          <Style idx={1} styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
         </Styles>
         <Text>
           If you don't want to deal with string length issues,there is a simpler
@@ -371,13 +371,13 @@ class Reference extends Page {
           occur.
         </Text>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             [+] bold:
           </Format>
-          <Format format="fulmiation">
+          <Format idx={1}>
             | "b (+): this will be any string"
           </Format>
-          <Format>
+          <Format idx={2}>
             | "b (+) red: an error will occur if the string contains quotes"
           </Format>
         </Formats>
@@ -385,8 +385,8 @@ class Reference extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['bold']}>(+): this will be any string</Style>
-          <Style styls={['bold']}>(+) red: an error will occur if the string contains quotes</Style>
+          <Style idx={0} styls={['bold']}>(+): this will be any string</Style>
+          <Style idx={1} styls={['bold']}>(+) red: an error will occur if the string contains quotes</Style>
         </Styles>
         <H2>#Symbol "&"</H2>
         <Text>
@@ -397,7 +397,7 @@ class Reference extends Page {
           can be any integer.
         </Text>
         <Formats>
-          <Format format="fulmiation">
+          <Format idx={0}>
             (+) cyan: there are three line breaks here 3&
           </Format>
         </Formats>
@@ -405,9 +405,9 @@ class Reference extends Page {
           The following is the corresponding terminal effect display:
         </Text>
         <Styles>
-          <Style styls={['cyan']}>there are three line breaks here</Style>
-          <Style>&nbsp;</Style>
-          <Style>&nbsp;</Style>
+          <Style idx={0} styls={['cyan']}>there are three line breaks here</Style>
+          <Style idx={1}>&nbsp;</Style>
+          <Style idx={2}>&nbsp;</Style>
         </Styles>
         <H2>#Postscript</H2>
         <Text>

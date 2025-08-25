@@ -1,20 +1,20 @@
 import React from 'react';
 import style from './index.module.css';
 
-export default function shellTemplate(e) {
+export default function shellTemplate(e, idx) {
   const { type, elem, } = e;
   switch (type) {
     case ' ':
-      return <span> </span>;
+      return <span key={idx}> </span>;
     case 'filename':
-      return <span className={style.filename}>{elem}</span>;
+      return <span key={idx} className={style.filename}>{elem}</span>;
     case 'command':
-      return <span className={style.command}>{elem}</span>;
+      return <span key={idx} className={style.command}>{elem}</span>;
     case 'subCommand':
-      return <span className={style.subCommand}>{elem}</span>;
+      return <span key={idx} className={style.subCommand}>{elem}</span>;
     case 'dot':
-      return <span className={style.dot}>{elem}</span>;
+      return <span key={idx} className={style.dot}>{elem}</span>;
     case 'format':
-      return <span className={style.format}>{elem}</span>;
+      return <span key={idx} className={style.format}>{elem}</span>;
   }
 }

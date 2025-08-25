@@ -3,7 +3,7 @@ import style from './index.module.css';
 
 class Style extends React.Component {
   render() {
-    let { styls, } = this.props;
+    let { styls, idx, } = this.props;
     if (styls === undefined) {
       styls = [];
     }
@@ -34,7 +34,7 @@ class Style extends React.Component {
       }
     });
     return (
-      <div className={[style.style].concat(classes).join(' ')}>
+      <div key={idx} className={[style.style].concat(classes).join(' ')}>
         {this.props.children}
       </div>
     );

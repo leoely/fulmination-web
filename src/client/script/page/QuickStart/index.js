@@ -76,39 +76,39 @@ class QuickStart extends Page {
         <Switch>
           <Sh>
             <Shi
-              key={0} idx={0}
+              idx={0}
               className={[installActive === 0 ? style.installActive : null]}
             >
               yarn
             </Shi>
             <Shi
-              key={1} idx={1}
+              idx={1}
               className={[installActive === 1 ? style.installActive : null]}
             >
               pnpm
             </Shi>
             <Shi
-              key={2} idx={2}
+              idx={2}
               className={[installActive === 2 ? style.installActive : null]}
             >
               npm
             </Shi>
           </Sh>
           <Sc>
-            <Sci key={0}
+            <Sci idx={0}
               className={[installActive === 0 ? style.installShow : null]}
             >
-              <Format format="shell">yarn add fulmination</Format>
+              <Format idx={0} format="shell">yarn add fulmination</Format>
             </Sci>
-            <Sci key={1}
+            <Sci idx={1}
               className={[installActive === 1 ? style.installShow : null]}
             >
-              <Format format="shell">pnpm add fulmination</Format>
+              <Format idx={1} format="shell">pnpm add fulmination</Format>
             </Sci>
-            <Sci key={2}
+            <Sci idx={2}
               className={[installActive === 2 ? style.installShow : null]}
             >
-              <Format format="shell">npm install fulmination</Format>
+              <Format idx={2} format="shell">npm install fulmination</Format>
             </Sci>
           </Sc>
         </Switch>
@@ -140,10 +140,10 @@ class QuickStart extends Page {
           formatting.
         </Text>
         <Formats>
-          <Format format="fulmination">
+          <Format idx={0} format="fulmination">
             (+) red; bold: this is fulmination an example of fulmination text. &
           </Format>
-          <Format format="fulmination">
+          <Format idx={1} format="fulmination">
             (+) green; bold: this is an example of fulmination text without line breaks.
           </Format>
         </Formats>
@@ -153,9 +153,9 @@ class QuickStart extends Page {
           actually executed.
         </Text>
         <Styles>
-          <Style styls={['bold', 'red']}>this is fulmination an example of fulmination text.</Style>
-          <Style styls={['inline', 'bold', 'green']}>this is an example of fulmination text without line breaks.</Style>
-          <Style styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
+          <Style idx={0} styls={['bold', 'red']}>this is fulmination an example of fulmination text.</Style>
+          <Style idx={1} styls={['inline', 'bold', 'green']}>this is an example of fulmination text without line breaks.</Style>
+          <Style idx={2} styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
         </Styles>
         <Text>
           A fulmination paragraph begins with <HighLight>"[+]"</HighLight> and
@@ -167,9 +167,9 @@ class QuickStart extends Page {
           displayed as independent line on the terminal.
         </Text>
         <Formats>
-          <Format key={0} format="fulmination">[+] bold; green:</Format>
-          <Format key={1} format="fulmination">| this is an exmpale of a fulmination paragraph.</Format>
-          <Format key={2} format="fulmination">| each line will automatically wrap.</Format>
+          <Format idx={0} format="fulmination">[+] bold; green:</Format>
+          <Format idx={1} format="fulmination">| this is an exmpale of a fulmination paragraph.</Format>
+          <Format idx={2} format="fulmination">| each line will automatically wrap.</Format>
         </Formats>
         <Text>
           This is the <HighLight>"effect picture"</HighLight> in the terminal
@@ -177,8 +177,8 @@ class QuickStart extends Page {
           actually executed.
         </Text>
         <Styles>
-          <Style styls={['bold', 'green']}>this is an exmpale of a fulmination paragraph.</Style>
-          <Style styls={['bold', 'green']}>each line will automatically wrap.</Style>
+          <Style idx={0} styls={['bold', 'green']}>this is an exmpale of a fulmination paragraph.</Style>
+          <Style idx={1} styls={['bold', 'green']}>each line will automatically wrap.</Style>
         </Styles>
       </div>
     );

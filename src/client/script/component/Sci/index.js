@@ -7,9 +7,14 @@ class Sci extends React.Component {
   }
 
   render() {
-    const { className, } = this.props;
+    const { idx, className, } = this.props;
     return (
-      <li className={[style.sci].concat(className).join(' ')}>{this.props.children}</li>
+      <li
+        key={idx}
+        className={[style.sci].concat(className).join(' ')}
+      >
+        {this.props.children}
+      </li>
     );
   }
 }
