@@ -1,10 +1,12 @@
 .command
-  color: rgb(50, 50, 150)
+  color: rgb(52, 52, 52)
 .subCommand
-  color: rgb(22, 112, 123)
+  color: rgb(22, 12, 158)
 .filename
-  color: rgb(230, 121, 42)
+  color: rgb(160, 0, 52)
 .dot
-  color: rgb(29, 129, 121)
+  color: rgb(29, 22, 121)
 .format
-  color: rgb(122, 32, 111)
+  color: rgb(100, 32, 210)
+.centerLine
+  color: rgb(50, 200, 50)

@@ -16,5 +16,7 @@ export default function shellTemplate(e, idx) {
       return <span key={idx} className={style.dot}>{elem}</span>;
     case 'format':
       return <span key={idx} className={style.format}>{elem}</span>;
+    case 'centerLine':
+      return <span key={idx} className={style.centerLine}>{elem}</span>;
   }
 }
