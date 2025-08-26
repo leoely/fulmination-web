@@ -9,9 +9,73 @@ import Text from '~/client/script/component/Text';
 import Format from '~/client/script/component/Format';
 import Formats from '~/client/script/component/Formats';
 import style from './index.module.css';
+import '~/client/style/hljs.css';
 
 class CodeStyle extends Page {
+  constructor(props) {
+    super(props);
+    this.javascriptCode1 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "fulmination.scan('(+) yellow: single-line fulmination');",
+      "fulmination.generate('(+) yellow: single-line fulmination');",
+    ].join('\n');
+    this.javascriptCode2 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "fulmination.scan(`",
+      "  (+) italic; yellow: a line break is added to each line &",
+      "  (+) black; bgYellow: last apostrophe is at the beginning and aligned with the first line",
+      "`);",
+      "fulmination.generate(`",
+      "  (+) italic; yellow: a line break is added to each line &",
+      "  (+) black; bgYellow: last apostrophe is at the beginning and aligned with the first line",
+      "`);",
+    ].join('\n');
+    this.javascriptCode3 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "fulmination.scanAll([",
+      "  ['(+) bold; yellow:  each of the array is separated by a newline &', 0],",
+      "  ['(+) black; bgYellow:', 1],",
+      "  ['(+) black; bgYellow: align the closing bracket of the array with first code', 2],",
+      "]);",
+      "fulmination.generateAll([",
+      "  ['(+) bold; yellow:  each of the array is separated by a newline &', 0],",
+      "  ['(+) black; bgYellow:', 1],",
+      "  ['(+) black; bgYellow: align the closing bracket of the array with first code', 2],",
+      "]);",
+    ].join('\n');
+    this.javascriptCode4 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "fulmination.scanAll([",
+      "  ['(+) bold; yellow:  make style simple and easy to learn', 0],",
+      "  [`",
+      "    [+] underline; yellow:",
+      "    |",
+      "  `, 1],",
+      "  ['(+) black; bgYellow: this will make the code more elegant', 2],",
+      "]);",
+      "fulmination.generateAll([",
+      "  ['(+) bold; yellow:  make style simple and easy to learn', 0],",
+      "  [`",
+      "    [+] underline; yellow:",
+      "    |",
+      "  `, 1],",
+      "  ['(+) black; bgYellow: this will make the code more elegant', 2],",
+      "]);",
+    ].join('\n');
+  }
+
   render() {
+    const {
+      javascriptCode1, javascriptCode2, javascriptCode3, javascriptCode4,
+    } = this;
     return (
       <div className={style.codestyle}>
         <H2>#Reason</H2>
@@ -83,21 +147,25 @@ class CodeStyle extends Page {
           <Format idx={2}>| there should be a space after each """;""</Format>
         </Formats>
         <Text>
-          There should a
+          If it is text,there should a
           <HighLight>"space"</HighLight> after the <HighLight>":"</HighLight>
-          to avoid the code being stuck together.
+          If it is paragraph,there should be a
+          <HighLight>"line break"</HighLight> after <HighLight>":"</HighLight>
+          .to avoid the code being stuck together.
         </Text>
         <Formats>
           <Format idx={0}>
             (+) italic; yellow: there should a space after the """:""
           </Format>
-          <Format idx={1}>
+        </Formats>
+        <Formats>
+          <Format idx={0}>
             [+] black; bgYellow:
           </Format>
-          <Format idx={2}>
-            | there should a space after the """:""
+          <Format idx={1}>
+            | there should a line break after the """:""
           </Format>
-          <Format idx={3}>
+          <Format idx={2}>
             | avoid the code being stuck together
           </Format>
         </Formats>
@@ -168,7 +236,9 @@ class CodeStyle extends Page {
           Use <HighLight>"*"</HighLight> to represent a
           <HighLight>"space"</HighLight>.it can only used at the beginning or end
           of a words,and should be separated from the text by a
-          <HighLight>"space"</HighLight>.
+          <HighLight>"space"</HighLight>.<HighLight>"*"</HighLight> and text
+          should be separated by a <HighLight>"space"</HighLight>.Avoid sticking
+          together.
         </Text>
         <Formats>
           <Format idx={0}>
@@ -186,7 +256,7 @@ class CodeStyle extends Page {
         </Text>
         <Formats>
           <Format idx={0}>[+] black; bgYellow:</Format>
-          <Format idx={1}>| just use a space</Format>
+          <Format idx={1}>| use spaces    directly</Format>
           <Format idx={2}>| each spaces will correspond to a space on the outpu terminal</Format>
         </Formats>
         <Text>
@@ -209,10 +279,70 @@ class CodeStyle extends Page {
         </Text>
         <Formats>
           <Format idx={0}>[+] yellow:</Format>
-          <Format idx={1}>| "b (+) yellow: can be distinguished from words."</Format>
-          <Format idx={2}>| so there no need to add extra spaces.</Format>
+          <Format idx={1}>| "b (+) yellow: can be distinguished from words"</Format>
+          <Format idx={2}>| so there no need to add extra spaces</Format>
+        </Formats>
+        <Text>
+          <HighLight>"Paragraphs"</HighLight> and <HighLight>"paragraph"</HighLight>,
+          <HighLight>"paragrah"</HighLight> and <HighLight>"text"</HighLight> and
+          <HighLight>"text"</HighLight> and <HighLight>"paragraph"</HighLight>
+          should all be separated by a <HighLight>"line break"</HighLight>.
+          Paragraph and text are also displayed with a line break in the
+          terminal display.However,alothough text and paragraphs do not hav line
+          breaks in the terminal display,a line break is added to avoid
+          confusing cdoe formatting.
+        </Text>
+        <Formats>
+          <Format idx={0}>[+] italic; yellow:</Format>
+          <Format idx={1}>| should all be separated by line break</Format>
+          <Format idx={2}>| added to avoid confusing code formatting</Format>
+          <Format idx={3}>[+] italic; yellow:</Format>
+          <Format idx={4}>| should all be separated by line break</Format>
+          <Format idx={5}>| added to avoid confusing code formatting</Format>
+        </Formats>
+        <Formats>
+          <Format idx={0}>[+] italic; yellow:</Format>
+          <Format idx={1}>| should all be separated by line break</Format>
+          <Format idx={2}>| added to avoid confusing code formatting</Format>
+          <Format idx={3}>(+) black; bgYellow: should all be separated by line break</Format>
+        </Formats>
+        <Formats>
+          <Format idx={0}>(+) black; bgYellow: should all be separated by line break</Format>
+          <Format idx={1}>[+] italic; yellow:</Format>
+          <Format idx={2}>| should all be separated by line break</Format>
+          <Format idx={3}>| added to avoid confusing code formatting</Format>
         </Formats>
         <H2>#Javascript part</H2>
+        <Text>
+          If it is a single-line <HighLight>"fulmintion" </HighLight> string
+          ,to pass it directly in single quotes.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode1} />
+        <Text>
+          If a multi-line <HighLight>"fulmination"</HighLight> string is passed
+          with apostrophes,a line break is added to each line of the
+          <HighLight>"fulmination"</HighLight> string.The last apostrophe is at
+          the beginning and aligned with the first line.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode2} />
+        <Text>
+          For the <HighLight>"scanAll"</HighLight> and
+          <HighLight>"generateAll"</HighLight> methods,you need to pass an array,
+          and align the closing bracket of the arrary with first code.Each
+          element of the array is separated by a
+          <HighLight>"newline"</HighLight> to ensure that the code is aligned.
+          A space is added between the text and the code to make the code more
+          beautiful.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode3} />
+        <Text>
+          The case of multi-line <HighLight>"fulmination"</HighLight> text is
+          actually the same style as mentioned above,which makes the style
+          simple and easy to learn.It is important to note that for multi-line
+          <HighLight>"fulmination"</HighLight>,each line needs to be indented
+          two spaces.This will make the code more elegant.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode4} />
       </div>
     );
   }
