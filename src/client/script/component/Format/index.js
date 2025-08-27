@@ -18,8 +18,7 @@ class Format extends React.Component {
         key={idx}
         className={style.format}
         dangerouslySetInnerHTML={{__html: html}}
-      >
-      </div>
+      />
     } else {
       content = <div key={idx} className={style.format}>
         {formatFulmination(this.props.children)}

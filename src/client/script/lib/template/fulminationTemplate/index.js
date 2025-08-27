@@ -5,7 +5,7 @@ export default function fulminationTemplate(e, idx) {
   const { type, elem, } = e;
   switch (type) {
     case ' ':
-      return <span key={idx}>&nbsp;</span>;
+      return <span>&nbsp;</span>;
     case 'asterisk':
       return <span key={idx} className={style.asterisk}>{elem}</span>;
     case 'semicolon':
@@ -21,7 +21,7 @@ export default function fulminationTemplate(e, idx) {
     case 'colon':
       return <span key={idx} className={style.colon}>{elem}</span>;
     case 'text':
-      return <span key={idx} className={style.text}>{elem}</span>;
+      return <span key={idx} className={[style.inlineFlex, style.text].join(' ')}>{elem}</span>;
     case 'format':
       return <span key={idx} className={style.format}>{elem}</span>;
     case 'parenthese':

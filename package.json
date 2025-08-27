@@ -55,7 +55,7 @@
     "advising.js": "^1.0.26",
     "browser-advising": "^0.0.7",
     "fulmination": "^1.1.19",
-    "glow.js": "^1.0.17",
+    "glow.js": "^1.0.19",
     "gulp": "^5.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "highlight.js": "^11.11.1",

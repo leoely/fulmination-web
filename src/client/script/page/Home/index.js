@@ -1,5 +1,6 @@
 import React from 'react';
 import Page from '~/client/script/component/Page';
+import Achor from '~/client/script/component/Achor';
 import HighLight from '~/client/script/component/HighLight';
 import Image from '~/client/script/component/Image';
 import Text from '~/client/script/component/Text';
@@ -112,6 +113,10 @@ class Home extends Page {
         />
         <H2>*Conclusion:</H2>
         <Text>Download and install <HighLight>"Fulmination"</HighLight>,hope you will enjoy it.</Text>
+        <H2>*Contact</H2>
+        <Text>
+          You can get in touch via <Achor href="mailto:leoely789@gmail.com">"leoely789@gmail.com"</Achor>.
+        </Text>
       </div>
     );
   }

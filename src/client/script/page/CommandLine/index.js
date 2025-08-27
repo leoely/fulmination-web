@@ -47,8 +47,23 @@ class CommandLine extends Page {
           <HighLight>"fulmination"</HighLight> syntax.
         </Text>
         <Formats>
-          <Format format="shell">fulmination parse text.fulmination</Format>
+          <Format idx={0} format="shell">fulmination parse text.fulmination</Format>
         </Formats>
+        <Text>
+          Below is the content of file <HighLight>"text.fulmination"</HighLight>:
+        </Text>
+        <Formats>
+          <Format idx={0}>[+] bold:</Format>
+          <Format idx={1}>| if you are not using node.js</Format>
+          <Format idx={2}>| fulmination command line tool parse may be a better soulution at present</Format>
+        </Formats>
+        <Text>
+          The following is the corresponding terminal effect display:
+        </Text>
+        <Styles>
+          <Style idx={0} styls={['bold']}>if you are not using node.js</Style>
+          <Style idx={1} styls={['bold']}>fulmination command line tool parse may be a better soulution at present</Style>
+        </Styles>
         <Text>
           As mentioned previously,<HighLight>"fulmination"</HighLight> ignores
           <HighLight>"spaces"</HighLight> and
@@ -60,8 +75,38 @@ class CommandLine extends Page {
           <Tr><Td>[filePath]</Td><Td>parameter</Td><Td>./text.fulmination</Td><Td>must</Td></Tr>
           <Tr><Td>-o,--ouput</Td><Td>options</Td><Td>./mini.fulmination</Td><Td>optional</Td></Tr>
         </Table>
+        <Text>
+          If you pass <HighLight>"-o,--output"</HighLight>,
+          <HighLight>"minify"</HighLight> will output the compressed results
+          to the specified file.
+        </Text>
         <Formats>
-          <Format format="shell">fulmination minify text.fulmination --output mini.fulmination</Format>
+          <Format idx={0} format="shell">fulmination minify text.fulmination --output mini.fulmination</Format>
+        </Formats>
+        <Text>
+          If <HighLight>"-o,--output"</HighLight> is not passed,
+          <HighLight>"minify"</HighLight> will output the compressed results to
+          the terminal screen.
+        </Text>
+        <Formats>
+          <Format idx={0} format="shell">fulmination minify text.fulmination</Format>
+        </Formats>
+        <Text>
+          Below is the content of file <HighLight>"text.fulmination"</HighLight>:
+        </Text>
+        <Formats>
+          <Format idx={0}>
+            (+) blue; italic: which takes up less space (+) underline; green: makes parsing faster &
+          </Format>
+          <Format idx={1}>[+] bold:</Format>
+          <Format idx={2}>| if yout pass -o,--output,minify will output the compress result to the specified file</Format>
+          <Format idx={3}>| if -o,--output is not passed,minify will ouput the compressed results to the terminal screen</Format>
+        </Formats>
+        <Text>The following is the compressiong result:</Text>
+        <Formats>
+          <Format idx={0}>
+            (+)blue;italic:which takes up less space(+)underline;green:makes parsing faster&[+]bold:|if yout pass -o,--output,minify will output the compress result to the specified file|if -o,--output is not passed,minify will ouput the compressed results to the terminal screen
+          </Format>
         </Formats>
       </div>
     );

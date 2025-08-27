@@ -105,10 +105,10 @@ class QuickStart extends Page {
             >
               <Format idx={1} format="shell">pnpm add fulmination</Format>
             </Sci>
-            <Sci idx={2}
+            <Sci idx={3}
               className={[installActive === 2 ? style.installShow : null]}
             >
-              <Format idx={2} format="shell">npm install fulmination</Format>
+              <Format idx={1} format="shell">npm install fulmination</Format>
             </Sci>
           </Sc>
         </Switch>

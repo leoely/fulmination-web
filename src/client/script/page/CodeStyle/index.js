@@ -210,7 +210,7 @@ class CodeStyle extends Page {
           concept and need to be separated.
         </Text>
         <Formats>
-          <Format>(+) underline; yellow: there should be space before """&"" &</Format>
+          <Format idx={0}>(+) underline; yellow: there should be space before """&"" &</Format>
         </Formats>
         <Text>
           If different text have <HighLight>"line breaks"</HighLight>,a line
