@@ -1,0 +1,12 @@
+services:
+  node:
+    image: "docker.m.daocloud.io/node:latest"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/home/node/app
+      - /var:/var
+    ports:
+      - 8888:8888
+    command: node dist/index.js --port 8888 --development false --safe false

@@ -12,6 +12,7 @@ import Li from '~/client/script/component/Li';
 import style from './index.module.css';
 import checkVersionImg from './checkVersion.png';
 import checkDependenciesImg from './checkDependencies.png';
+import fulminationLogoImg from './fulminationLogo.png';
 import '~/client/style/hljs.css';
 
 class Home extends Page {
@@ -43,6 +44,7 @@ class Home extends Page {
     return (
       <div className={style.home}>
         <div className={style.header}>
+          <img className={style.logo} src={fulminationLogoImg} alt="fulmination log" />
           <H1>Fulmination</H1>
           <span className={style.introduce}>
             is a library and peripherals based on dynamic compilation to

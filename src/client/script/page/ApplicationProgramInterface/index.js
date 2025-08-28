@@ -111,6 +111,23 @@ class ApplicationProgramInterface extends Page {
       "  ['(+) yellow: this doucment here will be blue', 2],",
       "]));",
     ].join('\n');
+    this.javascriptCode15 = [
+      "const fulmination = new Fulmination();",
+      "fulmination.scanAll([",
+      "  ['(+) blue: when using multiple scan', 0],",
+      "  ['(+) yellow: the syntax becomes redundant', 0],",
+      "  ['(+) green: you can use scanAll', 0],",
+      "]);",
+    ].join('\n');
+    this.javascriptCode16 = [
+      "const fulmination = new Fulmination();",
+      "console.log(fulmination.generateAll([",
+      "  ['(+) blue: when using multiple scan', 0],",
+      "  ['(+) yellow: the syntax becomes redundant', 0],",
+      "  ['(+) green: you can use scanAll', 0],",
+      "]));",
+    ].join('\n');
+    this.javascriptCode17 = '"\u001b[33mthe doucment here will be yellow\u001b[39m\u001b[34m(+) yellow: this doucment here will be blue\u001b[39m"';
   }
 
   render() {
@@ -118,7 +135,8 @@ class ApplicationProgramInterface extends Page {
       javascriptCode1, javascriptCode2, javascriptCode3, javascriptCode4,
       javascriptCode5, javascriptCode6, javascriptCode7, javascriptCode8,
       javascriptCode9, javascriptCode10, javascriptCode11, javascriptCode12,
-      javascriptCode13, javascriptCode14,
+      javascriptCode13, javascriptCode14, javascriptCode15, javascriptCode16,
+      javascriptCode17,
     } = this;
     return (
       <div className={style.applicationProgramInterface}>
@@ -233,6 +251,21 @@ class ApplicationProgramInterface extends Page {
           <Style idx={1} styls={['bold']}>by default,the output is sent to the terminal screen</Style>
         </Styles>
         <H2>#Method "scanAll"</H2>
+        <Text>
+          When using multiple <HighLight>"scan"</HighLight>,the syntax becomes
+          redundant.In this case,you can use <HighLight>"scanAll"</HighLight>
+          to solve this problem.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode15} />
+        <Text>
+          The following is the corresponding terminal effect display:
+        </Text>
+        <Styles>
+          <Style idx={0} styls={['blue', 'inline']}>when using multiple scan</Style>
+          <Style idx={0} styls={['yellow', 'inline']}>the syntax becomes redundant</Style>
+          <Style idx={0} styls={['green', 'inline']}>you can use scanAll</Style>
+          <Style idx={2} styls={['inline', 'black', 'bgWhite', 'bold']}>%</Style>
+        </Styles>
         <Text>
           Previously,introduced pure <HighLight>'fulmination'</HighLight> escape
           solutions,which don't require <HighLight>"Javascript"</HighLight>
@@ -442,8 +475,18 @@ class ApplicationProgramInterface extends Page {
         </Table>
         <H2>#Method "generateAll"</H2>
         <Text>
-          <HighLight>"scanAll"</HighLight> is designed to solve the problem of
-          <HighLight>"scan"</HighLight> escaping,and
+          When using multiple <HighLight>"generate"</HighLight>,the syntax becomes
+          redundant.In this case,you can use <HighLight>"generateAll"</HighLight>
+          to solve this problem.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode16} />
+        <Text>
+          Print out the parsed results:
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode17} />
+        <Text>
+          <HighLight>"generateAll"</HighLight> is designed to solve the problem of
+          <HighLight>"generate"</HighLight> escaping,and
           <HighLight>"generateAll"</HighLight> is also designed to solve the
           problem of <HighLight>"generate"</HighLight> escapeing.it is also the
           most recommended escaping solution for the
