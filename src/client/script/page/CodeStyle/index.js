@@ -54,7 +54,7 @@ class CodeStyle extends Page {
       "",
       "const fulmination = new Fulmination();",
       "fulmination.scanAll([",
-      "  ['(+) bold; yellow:  make style simple and easy to learn', 0],",
+      "  ['(+) bold; yellow: make style simple and easy to learn', 0],",
       "  [`",
       "    [+] underline; yellow:",
       "    |",
@@ -62,7 +62,7 @@ class CodeStyle extends Page {
       "  ['(+) black; bgYellow: this will make the code more elegant', 2],",
       "]);",
       "fulmination.generateAll([",
-      "  ['(+) bold; yellow:  make style simple and easy to learn', 0],",
+      "  ['(+) bold; yellow: make style simple and easy to learn', 0],",
       "  [`",
       "    [+] underline; yellow:",
       "    |",
@@ -70,11 +70,27 @@ class CodeStyle extends Page {
       "  ['(+) black; bgYellow: this will make the code more elegant', 2],",
       "]);",
     ].join('\n');
+    this.javascriptCode5 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "fulmination.scanAll([",
+      "  ['(+) black; bgYellow: if you use the scan metho multiple', 0],",
+      "  ['(+) yellow: should use scanAll method insteal', 0],",
+      "  ['(+) bold; yellow:  avoids grammatical duplication', 0],",
+      "]);",
+      "fulmination.generateAll([",
+      "  ['(+) black; bgYellow: if you use the generate metho multiple', 0],",
+      "  ['(+) yellow: should use generateAll method insteal', 0],",
+      "  ['(+) bold; yellow:  avoids grammatical duplication', 0],",
+      "]);",
+    ].join('\n');
   }
 
   render() {
     const {
       javascriptCode1, javascriptCode2, javascriptCode3, javascriptCode4,
+      javascriptCode5,
     } = this;
     return (
       <div className={style.codestyle}>
@@ -343,6 +359,17 @@ class CodeStyle extends Page {
           two spaces.This will make the code more elegant.
         </Text>
         <MultiLineJavascript javascriptCode={javascriptCode4} />
+        <Text>
+          If you use the <HighLight>"scan"</HighLight> or
+          <HighLight>"generate"</HighLight> method multiple times,you should
+          use the <HighLight>"scanAll"</HighLight> method and the
+          <HighLight>"generateAll"</HighLight> method instead.This avoids
+          grammatical duplication,make the makes the code more effcient,and
+          improves coding efficiency.After all,you can omit the beginning of
+          <HighLight>"fulmination.scan"</HighLight> or
+          <HighLight>"fulmination.generate"</HighLight>.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode5} />
       </div>
     );
   }
