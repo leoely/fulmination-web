@@ -4,11 +4,24 @@
   background-color: rgb(20, 20, 20)
 .logo
   width: 8%
+  max-width: 120px
   margin-right: 20px
+@media (500px <= width <= 1000px)
+  .logo
+    width: 12%
+@media (0 <= width <= 500px)
+  .logo
+    width: 14%
 .header
   display: flex
   align-items: center
 .introduce
+  display: inline-block
+  word-wrap: break-word
   font-size: 25px
   margin-left: 20px
   color: rgb(255, 255, 255)
+@media (0 <= width <= 500px)
+  .introduce
+    width: calc(85% - 197px)
+    font-size: 22px

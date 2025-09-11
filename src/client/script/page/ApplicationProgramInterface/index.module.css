@@ -1,5 +1,6 @@
 .applicationProgramInterface
   width: 100%
+  overflow: hidden
   padding: 27px 27px 275px 27px
   background-color: rgb(20, 20, 20)
   height: 100%
