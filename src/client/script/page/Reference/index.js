@@ -90,7 +90,8 @@ class Reference extends Page {
         </Styles>
         <H2>#Symbol "[" and "]"</H2>
         <Text>
-          Brackets and parenthese are similar,and the <HighLight>"+"</HighLight>
+          Square brackets and parenthese are similar,<HighLight>"[+]"</HighLight>
+          is the only form in which it appears.and the <HighLight>"+"</HighLight>
           symbol combination indicates a group of paragraphs.
         </Text>
         <Formats>
@@ -106,6 +107,34 @@ class Reference extends Page {
           <Style idx={0} styls={['blue']}>This is a line of paragraph text</Style>
           <Style idx={1} styls={['blue']}>This is a line of paragraph text</Style>
           <Style idx={2} styls={['blue']}>This is a line of paragraph text</Style>
+        </Styles>
+        <H2>#Symbol "&lt;" and "&gt;"</H2>
+        <Text>
+          Angle brackets must be combined with <HighLight>"+"</HighLight>,and
+          <HighLight>"&lt;+&gt;"</HighLight> is its only form.
+          <HighLight>"&lt;+&gt;"</HighLight> is used indicate that a section
+          content will be added next.The format of the content is designed to be
+          compatible with tranditional string iterals.The difference is that
+          each line starts with a <HighLight>"*"</HighLight>,which allow the
+          entire content to be freely combined without line breaks or spaces.The
+          content was originally desinged to be compatible with strings,so the
+          content will be displayed from the formatting to the end of the
+          <HighLight>"fulmination"</HighLight> text.This is to avoid escaping
+          issues and deviating from the original design.Therefore,if there is
+          other <HighLight>"fulmination"</HighLight> after it,it needs to be
+          split here.
+        </Text>
+        <Formats>
+          <Format idx={0} format="fulmination">{'<+> red:'}</Format>
+          <Format idx={1} format="fulmination">** compatible with tranditional string formats</Format>
+          <Format idx={2} format="fulmination">** to avoid escaping issues,the content will continue until the end of the fulmination text</Format>
+        </Formats>
+        <Text>
+          The following is the corresponding terminal effect display:
+        </Text>
+        <Styles>
+          <Style idx={0} styls={['red']}>&nbsp;&nbsp;compatible with tranditional string formats</Style>
+          <Style idx={1} styls={['red']}>&nbsp;&nbsp;to avoid escaping issues,the content will continue until the end of the fulmination text</Style>
         </Styles>
         <H2>#Format</H2>
         <Text>
@@ -291,6 +320,26 @@ class Reference extends Page {
           <Style idx={0} styls={['green', 'inline']}>&nbsp;&nbsp;asterisks are required at the beginning and end&nbsp;&nbsp;</Style>
           <Style idx={1} styls={['bold', 'inline']}>use a spece&nbsp;&nbsp;&nbsp;directly in the middle</Style>
           <Style idx={2} styls={['inline', 'bgWhite', 'black', 'normal']}>%</Style>
+        </Styles>
+        <Text>
+          Another use for the <HighLight>"*"</HighLight> is asterisks within
+          content.This <HighLight>"*"</HighLight> is designed to allow for
+          flexible formatting of <HighLight>"fulmination"</HighLight> text.
+          <HighLight>"Space"</HighLight> at the beginning of each line are
+          ignored;if you need to add spaces,you must use
+          <HighLight>"*"</HighLight> to add them.
+        </Text>
+        <Formats>
+          <Format idx={0}>{'<+> red:'}</Format>
+          <Format idx={0}>there is no space at the beginning of the line</Format>
+          <Format idx={0}>** there are two spaces at the beginning of the line</Format>
+        </Formats>
+        <Text>
+          The following is the corresponding terminal effect display:
+        </Text>
+        <Styles>
+          <Style idx={0} styls={['red']}>there is no space at the beginning of the line</Style>
+          <Style idx={0} styls={['red']}>&nbsp;&nbsp;there are two spaces at the beginning of the line</Style>
         </Styles>
         <H2>#Symbol """</H2>
         <Text>

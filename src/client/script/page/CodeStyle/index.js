@@ -85,12 +85,33 @@ class CodeStyle extends Page {
       "  ['(+) bold; yellow:  avoids grammatical duplication', 0],",
       "]);",
     ].join('\n');
+    this.javascriptCode6 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "const originalContent = `",
+      "  this is piece of orginal content text",
+      "  this is may be copy-pasted text",
+      "  cannot be used directly",
+      "`;",
+      "const content = Fulmination.processOriginalContent(originalContent)",
+      "fulmination.scan(`<+> red: ${content}`);",
+      "fulmination.generate(`<+> red: ${content}`);",
+    ].join('\n');
+    this.javascriptCode7 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "const content = Fulmination.processOriginalContent(error.stack);",
+      "fulmination.scan(`<+> red: ${content}`);",
+      "fulmination.generate(`<+> red: ${content}`);",
+    ].join('\n');
   }
 
   render() {
     const {
       javascriptCode1, javascriptCode2, javascriptCode3, javascriptCode4,
-      javascriptCode5,
+      javascriptCode5, javascriptCode6, javascriptCode7,
     } = this;
     return (
       <div className={style.codestyle}>
@@ -370,6 +391,16 @@ class CodeStyle extends Page {
           <HighLight>"fulmination.generate"</HighLight>.
         </Text>
         <MultiLineJavascript javascriptCode={javascriptCode5} />
+        <Text>
+          To avoid escaping issue,the <HighLight>"content"</HighLight> is always
+          paresed to the end of the <HighLight>"fulmination"</HighLight>,so if
+          you use the <HighLight>"content"</HighLight>,you should use a separate
+          <HighLight>"scan"</HighLight> or <HighLight>"generate"</HighLight>.
+          The copied and pasted <HighLight>"fulmiantion"</HighLight> and other
+          output string are processed in the same way.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode6} />
+        <MultiLineJavascript javascriptCode={javascriptCode7} />
       </div>
     );
   }

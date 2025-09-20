@@ -24,6 +24,8 @@ export default function fulminationTemplate(e, idx) {
       return <span key={idx} className={[style.inlineFlex, style.text].join(' ')}>{elem}</span>;
     case 'format':
       return <span key={idx} className={style.format}>{elem}</span>;
+    case 'angleBracket':
+      return <span key={idx} className={style.angleBracket}>{elem}</span>;
     case 'parenthese':
       return <span key={idx} className={style.parenthese}>{elem}</span>;
     case 'plus':
