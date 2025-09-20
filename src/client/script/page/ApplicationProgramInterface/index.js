@@ -128,6 +128,19 @@ class ApplicationProgramInterface extends Page {
       "]));",
     ].join('\n');
     this.javascriptCode17 = '"\u001b[33mthe doucment here will be yellow\u001b[39m\u001b[34m(+) yellow: this doucment here will be blue\u001b[39m"';
+    this.javascriptCode18 = [
+      "const originalContent = `",
+      "this is traditional string",
+      "  here is a line containing spaces",
+      "`;",
+      "console.log(Fulmination.processOriginalContent(originalContent));",
+    ].join('\n');
+    this.javascriptCode19 = [
+      " ",
+      "this is traditional string",
+      "**here is a line containing spaces",
+      " ",
+    ].join('\n');
   }
 
   render() {
@@ -136,7 +149,7 @@ class ApplicationProgramInterface extends Page {
       javascriptCode5, javascriptCode6, javascriptCode7, javascriptCode8,
       javascriptCode9, javascriptCode10, javascriptCode11, javascriptCode12,
       javascriptCode13, javascriptCode14, javascriptCode15, javascriptCode16,
-      javascriptCode17,
+      javascriptCode17, javascriptCode18, javascriptCode19,
     } = this;
     return (
       <div className={style.applicationProgramInterface}>
@@ -632,6 +645,43 @@ class ApplicationProgramInterface extends Page {
         <Text>
           <HighLight>"console.log"</HighLight> adds line breaks by default,so
           there are <HighLight>"%"</HighLight> prompts.
+        </Text>
+        <H2>#Static method</H2>
+        <Text>
+          <HighLight>"Fulmination"</HighLight> also provides some static method
+          that can better solve problems when needed:
+        </Text>
+        <Table>
+          <Th>Fulmination static method list</Th>
+          <Tr>
+            <Td>processOriginalContent</Td>
+            <Td>
+              convert traditional strings into content formats that fulmiantion
+              can fulmination can recognize
+            </Td>
+          </Tr>
+        </Table>
+        <H2>#StaticMethod processOriginalContent</H2>
+        <Text>
+          When using <HighLight>"fulmination"</HighLight>,you'll often
+          encouter tranditional string.These might be text copied from elsewhere
+          or output from elsewhere.Using the <HighLight>"content"</HighLight>
+          provided by <HighLight>"fulmination"</HighLight> is appropriate and
+          recommended.However,<HighLight>"fulmination"</HighLight>
+          <HighLight>"content"</HighLight> is designed to be  compatible with
+          traditional strings.However,for reason that maintain code formatting
+          freedom,a distinction is made between the two.The static method
+          <HighLight>"processOriginalContent"</HighLight> is designed to address
+          the situation.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode18} />
+        <Text>The following is the output:</Text>
+        <MultiLineJavascript javascriptCode={javascriptCode19} />
+        <Text>
+          Don't worry about the extra <HighLight>"line break"</HighLight> in the
+          top half;it won't affect the final display.The
+          <HighLight>"line break"</HighLight> in the bottom half might affect
+          actual output,and might result in an extra blank line.
         </Text>
         <H2>#Postscript</H2>
         <Text>

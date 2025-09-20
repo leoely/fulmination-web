@@ -85,12 +85,33 @@ class CodeStyle extends Page {
       "  ['(+) bold; yellow:  avoids grammatical duplication', 0],",
       "]);",
     ].join('\n');
+    this.javascriptCode6 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "const originalContent = `",
+      "  this is piece of orginal content text",
+      "  this is may be copy-pasted text",
+      "  cannot be used directly",
+      "`;",
+      "const content = Fulmination.processOriginalContent(originalContent)",
+      "fulmination.scan(`<+> red: ${content}`);",
+      "fulmination.generate(`<+> red: ${content}`);",
+    ].join('\n');
+    this.javascriptCode7 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "const content = Fulmination.processOriginalContent(error.stack);",
+      "fulmination.scan(`<+> red: ${content}`);",
+      "fulmination.generate(`<+> red: ${content}`);",
+    ].join('\n');
   }
 
   render() {
     const {
       javascriptCode1, javascriptCode2, javascriptCode3, javascriptCode4,
-      javascriptCode5,
+      javascriptCode5, javascriptCode6, javascriptCode7,
     } = this;
     return (
       <div className={style.codestyle}>
@@ -140,7 +161,7 @@ class CodeStyle extends Page {
         <Text>
           There should be a
           <HighLight>"space"</HighLight> before <HighLight>"(+)"</HighLight> and
-          <HighLight>"[+]"</HighLight> and the
+          <HighLight>"[+]"</HighLight> and <HighLight>"{'<+>'}"</HighLight>the
           <HighLight>"format list"</HighLight> to avoid confusion between the
           two and making it difficult to read.
         </Text>
@@ -322,11 +343,60 @@ class CodeStyle extends Page {
           <Format idx={2}>| added to avoid confusing code formatting</Format>
           <Format idx={3}>(+) black; bgYellow: should all be separated by line break</Format>
         </Formats>
+        <Text>
+          Each line of <HighLight>"fulmiantion"</HighLight> <HighLight>"content"</HighLight>
+          should be marked with <HighLight>"*"</HighLight> at the beginning,
+          and the <HighLight>"*"</HighLight> and the following text should be
+          separarated by a space.This will make code cleaner.Other spaces can
+          be left as is.
+        </Text>
         <Formats>
-          <Format idx={0}>(+) black; bgYellow: should all be separated by line break</Format>
-          <Format idx={1}>[+] italic; yellow:</Format>
-          <Format idx={2}>| should all be separated by line break</Format>
-          <Format idx={3}>| added to avoid confusing code formatting</Format>
+          <Format idx={0}>{'<+> bgRed:'}</Format>
+          <Format idx={1}>** should be marked with "*</Format>
+          <Format idx={2}>** this will make code cleaner.</Format>
+          <Format idx={2}>** other spaces   can be left as is</Format>
+        </Formats>
+        <Text>
+          The main text of the <HighLight>"fulmination"</HighLight> content
+          occupies one line each,because each blank line will correspond to a
+          blank line when displayed.
+        </Text>
+        <Formats>
+          <Format idx={0}>{'<+> bold; red:'}</Format>
+          <Format idx={1}>** content occupies one line each</Format>
+          <Format idx={2}>** each blank line will correspond to a blank line</Format>
+        </Formats>
+        <Text>
+          To avoid escaping,the
+          <HighLight>"fulmination"</HighLight> content is parsed until the end
+          of the <HighLight>"fulmination"</HighLight> text.Therefore,
+          there is usually no other words after
+          <HighLight>"fulmination"</HighLight> content.
+        </Text>
+        <Formats>
+          <Format idx={0}>{'<+> red:'}</Format>
+          <Format idx={1}>** content is parsed until the end of</Format>
+          <Format idx={2}>** there is usually no other words after fulmination content</Format>
+        </Formats>
+        <Text>
+          If the <HighLight>"fulmination"</HighLight> <HighLight>"content"</HighLight>
+          is combined with
+          <HighLight>"text"</HighLight> or <HighLight>"paragraphs"</HighLight>,
+          they should be separated by blank lines to avoid code confusion.
+        </Text>
+        <Formats>
+          <Format idx={0}>(+) bold: This is the text of fulmination</Format>
+          <Format idx={1}>{'<+> red:'}</Format>
+          <Format idx={2}>** fulmination content is combined with text</Format>
+          <Format idx={3}>** they should be separated by blank lines</Format>
+        </Formats>
+        <Formats>
+          <Format idx={0}>[+] dim:</Format>
+          <Format idx={1}>| This is the fulmination paragraph</Format>
+          <Format idx={2}>| they should be seprarated by blank lines</Format>
+          <Format idx={3}>{'<+> red:'}</Format>
+          <Format idx={4}>** fulmination content is combined with text</Format>
+          <Format idx={5}>** they should be separated by blank lines</Format>
         </Formats>
         <H2>#Javascript part</H2>
         <Text>
@@ -370,6 +440,16 @@ class CodeStyle extends Page {
           <HighLight>"fulmination.generate"</HighLight>.
         </Text>
         <MultiLineJavascript javascriptCode={javascriptCode5} />
+        <Text>
+          To avoid escaping issue,the <HighLight>"content"</HighLight> is always
+          paresed to the end of the <HighLight>"fulmination"</HighLight>,so if
+          you use the <HighLight>"content"</HighLight>,you should use a separate
+          <HighLight>"scan"</HighLight> or <HighLight>"generate"</HighLight>.
+          The copied and pasted <HighLight>"fulmiantion"</HighLight> and other
+          output string are processed in the same way.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode6} />
+        <MultiLineJavascript javascriptCode={javascriptCode7} />
       </div>
     );
   }
