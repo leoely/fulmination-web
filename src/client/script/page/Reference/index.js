@@ -386,7 +386,7 @@ class Reference extends Page {
         </Text>
         <Styles>
           <Style idx={0} styls={['bold']}>" need to be escaped</Style>
-          <Style idx={1} styls={['bold']}>&nbsp;&nbsp;need to be escaped</Style>
+          <Style idx={1} styls={['bold']}>* need to be escaped</Style>
           <Style idx={2} styls={['bold']}>ect need to be escaped</Style>
         </Styles>
         <Text>

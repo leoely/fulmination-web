@@ -5,7 +5,7 @@ export default function shellTemplate(e, idx) {
   const { type, elem, } = e;
   switch (type) {
     case ' ':
-      return <span key={idx}> </span>;
+      return <span key={idx}>&nbsp;</span>;
     case 'filename':
       return <span key={idx} className={style.filename}>{elem}</span>;
     case 'command':
