@@ -359,6 +359,8 @@ class Reference extends Page {
           <Tr><Td>)</Td><Td>")</Td></Tr>
           <Tr><Td>[</Td><Td>"[</Td></Tr>
           <Tr><Td>]</Td><Td>"]</Td></Tr>
+          <Tr><Td>&lt;</Td><Td>"&lt;</Td></Tr>
+          <Tr><Td>&gt;</Td><Td>"&gt;</Td></Tr>
           <Tr><Td>+</Td><Td>"+</Td></Tr>
           <Tr><Td>:</Td><Td>":</Td></Tr>
           <Tr><Td>;</Td><Td>";</Td></Tr>

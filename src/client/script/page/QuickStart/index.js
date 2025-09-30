@@ -116,15 +116,18 @@ class QuickStart extends Page {
         <Text>
           Files written according to fulmination's syntax should have a suffix
           of <HighLight>".fulmination"</HighLight> suffix.fulmination contains
-          two different syntaxes:<HighLight>"text"</HighLight> and
-          <HighLight>"paragraph"</HighLight>.
+          two different syntaxes:<HighLight>"text"</HighLight>,
+          <HighLight>"paragraph"</HighLight> and
+          <HighLight>"content"</HighLight>.
         </Text>
         <Text>
-          The synatx of fulmination beign with <HighLight>"(+)"</HighLight> or
-          <HighLight>"[+]"</HighLight>.<HighLight>"+"</HighLight> is a semantic
+          The synatx of fulmination beign with <HighLight>"(+)"</HighLight>,
+          <HighLight>"[+]"</HighLight> and
+          <HighLight>"&lt;+&gt;"</HighLight>.<HighLight>"+"</HighLight> is a semantic
           symbol indicating the addition of a text or paragraph.
-          <HighLight>"Parenthesess"</HighLight> and
-          <HighLight>"Breacktes"</HighLight> are used to disinguish between
+          <HighLight>"Parenthesess"</HighLight>,
+          <HighLight>"Breacktes"</HighLight> and
+          <HighLight>"Angle Brackets"</HighLight>are used to disinguish between
           text and paragraphs,and brackets are used to indicate the color and
           formatting of the newly added text or paragraph.
         </Text>
@@ -179,6 +182,29 @@ class QuickStart extends Page {
         <Styles>
           <Style idx={0} styls={['bold', 'green']}>this is an exmpale of a fulmination paragraph.</Style>
           <Style idx={1} styls={['bold', 'green']}>each line will automatically wrap.</Style>
+        </Styles>
+        <Text>
+          Fulmination <HighLight>"content"</HighLight> begins with
+          <HighLight>"&lt;+&gt;"</HighLight>.This is primarily intended for use
+          with words copied and pasted from other locations,or words generated
+          elsewhere.it is not recommended for other purposes.The displayed
+          formatting retains the original formatting of the text.
+        </Text>
+        <Formats>
+          <Format idx={0} format="fulmination">&lt;+&gt; bold; red:</Format>
+          <Format idx={1} format="fulmination">this is an exmpale of a fulmination content.</Format>
+          <Format idx={2} format="fulmination">this is primarily intended for use words.</Format>
+          <Format idx={2} format="fulmination">copied and pasted from other locations or words generated elsewhere.</Format>
+        </Formats>
+        <Text>
+          This is the <HighLight>"effect picture"</HighLight> in the terminal
+          after the above code is
+          actually executed.
+        </Text>
+        <Styles>
+          <Style idx={0} styls={['bold', 'red']}>this is an exmpale of a fulmination content.</Style>
+          <Style idx={1} styls={['bold', 'red']}>this is primarily intended for use words.</Style>
+          <Style idx={1} styls={['bold', 'red']}>copied and pasted from other locations or words generated elsewhere.</Style>
         </Styles>
       </div>
     );
