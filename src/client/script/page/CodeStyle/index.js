@@ -106,12 +106,28 @@ class CodeStyle extends Page {
       "fulmination.scan(`<+> red: ${content}`);",
       "fulmination.generate(`<+> red: ${content}`);",
     ].join('\n');
+    this.javascriptCode8 = [
+      "import Fulmination from 'fulmination';",
+      "",
+      "const fulmination = new Fulmination();",
+      "const content = Fulmination.processOriginalContent(error.stack);",
+      "fulmination.scanAll([",
+      "  [`<+> red: ${content}`, 0],",
+      "  ['(+) black; bgYellow: elements without scanAll or generateAll are independent text', 0],",
+      "  [`<+> red: ${content}`, 0],",
+      "]);",
+      "fulmination.generateAll([",
+      "  [`<+> red: ${content}`, 0],",
+      "  ['(+) black; bgYellow: elements without scanAll or generateAll are independent text', 0],",
+      "  [`<+> red: ${content}`, 0],",
+      "]);",
+    ].join('\n');
   }
 
   render() {
     const {
       javascriptCode1, javascriptCode2, javascriptCode3, javascriptCode4,
-      javascriptCode5, javascriptCode6, javascriptCode7,
+      javascriptCode5, javascriptCode6, javascriptCode7, javascriptCode8,
     } = this;
     return (
       <div className={style.codestyle}>
@@ -138,7 +154,8 @@ class CodeStyle extends Page {
         </Ul>
         <H2>#Fulmination syntax</H2>
         <Text>
-          <HighLight>"(+)"</HighLight> and <HighLight>"[+]"</HighLight> are
+          <HighLight>"(+)"</HighLight>, <HighLight>"[+]"</HighLight> and
+          <HighLight>"&lt;+&gt;"</HighLight> are
           written at the beginning of line.After all,there is no special purpose
           and no need to use <HighLight>"spaces"</HighLight> and
           <HighLight>"line breaks"</HighLight>.This is both compact and
@@ -443,13 +460,21 @@ class CodeStyle extends Page {
         <Text>
           To avoid escaping issue,the <HighLight>"content"</HighLight> is always
           paresed to the end of the <HighLight>"fulmination"</HighLight>,so if
-          you use the <HighLight>"content"</HighLight>,you should use a separate
           <HighLight>"scan"</HighLight> or <HighLight>"generate"</HighLight>.
           The copied and pasted <HighLight>"fulmiantion"</HighLight> and other
           output string are processed in the same way.
         </Text>
         <MultiLineJavascript javascriptCode={javascriptCode6} />
         <MultiLineJavascript javascriptCode={javascriptCode7} />
+        <Text>
+          However,when using <HighLight>"scanAll"</HighLight> or
+          <HighLight>"generateAll"</HighLight>,the situation is different.
+          Elements without <HighLight>"scanAll"</HighLight> or
+          <HighLight>"generateAll"</HighLight> are independent text.Therefore,
+          the content can be used in <HighLight>"scanAll"</HighLight> or
+          <HighLight>"generateAll"</HighLight>.
+        </Text>
+        <MultiLineJavascript javascriptCode={javascriptCode8} />
       </div>
     );
   }
